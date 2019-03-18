@@ -1,0 +1,14 @@
+{
+  "name": "fasterfit",
+  "version": "0.5.0",
+  "description": "An app to mathmatically guide the user to push themselve",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stettsen Olsen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

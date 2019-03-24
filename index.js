@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 
 app.get("/", function(req, res){
     console.log("Request for root");
-    res.sendFile(path.join(__dirname+'/home.ejs'));
+    res.sendFile(path.join(__dirname+'/home.html'));
 });
 
 

@@ -14,6 +14,8 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname+'/home.html'));
 });
 
+app.use(express.static("public")); 
+
 
 app.listen(process.env.PORT || 5000, function(){
     console.log('Server is running on port 5000');

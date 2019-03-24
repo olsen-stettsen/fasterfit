@@ -1,0 +1,22 @@
+{
+  "name": "fasterfit",
+  "version": "0.5.0",
+  "description": "The app that helps you trains smart and algorithmically pushes you to do your best.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olsen-stettsen/fasterfit.git"
+  },
+  "author": "Stettsen Olsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olsen-stettsen/fasterfit/issues"
+  },
+  "homepage": "https://github.com/olsen-stettsen/fasterfit#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

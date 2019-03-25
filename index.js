@@ -2,13 +2,8 @@ var express = require('express');
 var app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: false })); 
-app.use(bodyParser.json());
-
-/*
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});*/
+app.use(bodyParser.urlencoded({ extended: true })); 
+app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
     console.log("Request for root");
@@ -18,7 +13,7 @@ app.get("/update", function(req, res){
   var name = req.body.name;
   var excercise = req.body.excercise;
   var weight = req.body.weight;
-  console.log("name: " + name );
+  console.log("name: " + req.body );
   console.log(excercise);
   console.log(weight);
   console.log("Request for update");

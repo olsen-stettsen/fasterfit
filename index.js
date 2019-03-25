@@ -10,7 +10,7 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname+'/home.html'));
 });
 app.get("/update", function(req, res){
-  var name = req.body.name;
+  var name = req.body.name; //
   var excercise = req.body.excercise;
   var weight = req.body.weight;
   console.log("name: " + JSON.stringify(req.body));

@@ -8,8 +8,8 @@
 </head>
 
 <body>
-  <h2>Please enter your information</h2>
-  <form action="/update" method="post" enctype="application/json">
+  <h2>Welcome!</h2>
+  <form action="/signup" method="post" enctype="application/json">
       USER NAME:
       <input type="text" name="username" id="username" placeholder="User Name"><br>
       EMAIL:
@@ -18,6 +18,16 @@
       <input type="number" name="password" id="password" placeholder="Password">
       <button>Submit</button>
   </form>
+  <h2>_______________________________________________________________</h2>
+  <form action="/signin" method="post" enctype="application/json">
+    USER NAME:
+    <input type="text" name="username" id="username" placeholder="User Name"><br>
+    EMAIL:
+    <input type="text" name="email" id="email" placeholder="E-Mail"><br>
+    PASSWORD:
+    <input type="number" name="password" id="password" placeholder="Password">
+    <button>Submit</button>
+</form>
 </body>
 </html>
 

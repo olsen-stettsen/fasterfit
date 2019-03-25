@@ -13,6 +13,16 @@ app.get("/", function(req, res){
     console.log("Request for root");
     res.sendFile(path.join(__dirname+'/home.html'));
 });
+app.get("/update", function(req, res){
+  var name = req.body.name;
+  var excercise = req.body.excercise;
+  var weight = req.body.weight;
+  console.log(name);
+  console.log(excercise);
+  console.log(weight);
+  console.log("Request for update");
+  res.sendFile(path.join(__dirname+'/update.html'));
+});
 
 app.use(express.static("public")); 
 

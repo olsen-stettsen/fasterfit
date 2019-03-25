@@ -44,7 +44,7 @@ function getfromdb(){
     }
     client.end();
     localStorage.setItem("results", JSON.stringify(results));
-    console.log(JSON.stringify(results));
+    console.log(localStorage.getItem("results"));
   });
 }
 
@@ -68,7 +68,6 @@ function posttodb(username, email, password){
     }
     client.end();
   });
-  getfromdb();
 }
 
 app.use(express.static("public")); 

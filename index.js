@@ -68,6 +68,7 @@ function posttodb(username, email, password){
     }
     client.end();
   });
+  getfromdb();
 }
 
 app.use(express.static("public")); 

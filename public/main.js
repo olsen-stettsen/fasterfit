@@ -1,5 +1,5 @@
 function onload(){
-    alert(localStorage.getItem("results"));
+    alert(localStorage.getItem("username"));
     greet();
 }
 function greet(){

@@ -44,7 +44,7 @@ function getfromdb(){
     }
     client.end();
     localStorage.setItem("results", JSON.stringify(results));
-    console.log(localStorage.getItem("results"));
+    console.log(JSON.stringify(results));
   });
 }
 

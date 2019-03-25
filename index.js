@@ -9,7 +9,7 @@ app.get("/", function(req, res){
     console.log("Request for root");
     res.sendFile(path.join(__dirname+'/home.html'));
 });
-app.get("/update", function(req, res){
+app.post("/update", function(req, res){
   var name = req.body.name;
   var excercise = req.body.excercise;
   var weight = req.body.weight;

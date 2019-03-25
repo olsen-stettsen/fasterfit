@@ -17,7 +17,7 @@ app.get("/update", function(req, res){
   var name = req.body.name;
   var excercise = req.body.excercise;
   var weight = req.body.weight;
-  console.log(name);
+  console.log(req.body.name);
   console.log(excercise);
   console.log(weight);
   console.log("Request for update");

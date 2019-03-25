@@ -7,7 +7,7 @@ app.set('view engine', 'ejs');
 
 app.get("/", function(req, res){
     console.log("Request for root");
-    res.sendFile(path.join(__dirname+'/home.html'));
+    res.sendFile(path.join(__dirname+'/home.ejs'));
 });
 app.get("/update", function(req, res){
   var name = req.body.name;

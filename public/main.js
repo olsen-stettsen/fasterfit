@@ -2,6 +2,7 @@ function onload(){
     greet();
 }
 function greet(){
-    console.log("Main.js localstorage username" + localStorage.getItem('username'));
+    var un = "Main.js localstorage username" + localStorage.getItem('username');
+    console.log(un);
     //document.getElementById("welcometag").innerHTML = localStorage.getItem('username');
 }

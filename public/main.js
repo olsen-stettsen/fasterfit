@@ -2,5 +2,5 @@ function onload(){
     greet();
 }
 function greet(){
-    document.getElementById("welcometag").innerHTML = "eeee";
+    document.getElementById("welcometag").innerHTML = localStorage.getItem('username');
 }

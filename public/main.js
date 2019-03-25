@@ -1,4 +1,5 @@
 function onload(){
+    alert(localStorage.getItem("results"));
     greet();
 }
 function greet(){

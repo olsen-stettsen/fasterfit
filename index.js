@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+var LocalStorage = require('node-localstorage').LocalStorage,
+localStorage = new LocalStorage('./scratch');
 
 const { Client } = require('pg');
 

@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const { Client } = require('pg');
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.set('view engine', 'ejs');
 
@@ -22,6 +23,7 @@ function posttodb(name, excercise, weight){
   console.log("name: " + name);
   console.log("excercise: " + excercise);
   console.log("weight: " + weight);
+
 }
 
 app.use(express.static("public")); 

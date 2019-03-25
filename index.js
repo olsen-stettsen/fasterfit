@@ -13,7 +13,7 @@ app.get("/update", function(req, res){
   var name = req.body.name;
   var excercise = req.body.excercise;
   var weight = req.body.weight;
-  console.log("name: " + req.body );
+  console.log("name: " + JSON.stringify(req.body));
   console.log(excercise);
   console.log(weight);
   console.log("Request for update");

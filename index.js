@@ -66,7 +66,7 @@ function posttodb(username, email, password){
     }
     client.end();
   });
-  localStorage.setItem("username", username);
+  localStorage.setItem('username', username);
   //console.log(localStorage.getItem('results'));
 }
 

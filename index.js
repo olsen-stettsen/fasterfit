@@ -13,9 +13,9 @@ app.post("/update", function(req, res){
   var name = req.body.name;
   var excercise = req.body.excercise;
   var weight = req.body.weight;
-  console.log("name: " + JSON.stringify(req.body));
-  console.log(excercise);
-  console.log(weight);
+  console.log("name: " + name);
+  console.log("excercise: " + excercise);
+  console.log("weight: " + weight);
   console.log("Request for update");
   res.sendFile(path.join(__dirname+'/public/update.html'));
 });

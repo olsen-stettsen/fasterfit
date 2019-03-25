@@ -26,6 +26,20 @@ function posttodb(name, excercise, weight){
   console.log("excercise: " + excercise);
   console.log("weight: " + weight);
 
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  
+  client.connect();
+  
+  client.query('SELECT * FROM account;', (err, res) => {
+    if (err) throw err;
+    for (let row of res.rows) {
+      console.log(JSON.stringify(row));
+    }
+    client.end();
+  });
 }
 
 app.use(express.static("public")); 

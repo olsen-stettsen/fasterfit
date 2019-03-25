@@ -4,7 +4,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.set('view engine', 'ejs');
-const { Client } = require('pg');
 
 app.get("/", function(req, res){
     console.log("Request for root");

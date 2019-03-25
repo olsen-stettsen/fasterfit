@@ -34,11 +34,14 @@ function posttodb(name, excercise, weight){
   client.connect();
   
   client.query('SELECT * FROM account;', (err, res) => {
+    var results = [];
     if (err) throw err;
     for (let row of res.rows) {
-      console.log(JSON.stringify(row));
+      results.push(row);
     }
     client.end();
+    localStorage.setItem("results", JSON.stringify(results));
+    console.log(JSON.stringify(results));
   });
 }
 

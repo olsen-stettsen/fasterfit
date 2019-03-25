@@ -43,8 +43,8 @@ function getfromdb(){
       results.push(row);
     }
     client.end();
-    localStorage.setItem("results", JSON.stringify(results));
-    console.log(JSON.stringify(results));
+    localStorage.setItem('results', JSON.stringify(results));
+    console.log(localStorage.getItem('results'));
   });
 }
 

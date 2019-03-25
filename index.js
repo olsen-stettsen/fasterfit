@@ -5,11 +5,6 @@ const bodyParser = require('body-parser');
 
 const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.set('view engine', 'ejs');
 

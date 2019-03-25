@@ -66,9 +66,8 @@ function posttodb(username, email, password){
     }
     client.end();
   });
-  console.log("user name check 2: " + username);
   localStorage.setItem('username', username);
-  //console.log(localStorage.getItem('results'));
+  console.log("chekc: " + localStorage.getItem('results'));
 }
 
 app.use(express.static("public")); 

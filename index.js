@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.set('view engine', 'ejs');
+const { Client } = require('pg');
 
 app.get("/", function(req, res){
     console.log("Request for root");
@@ -13,12 +14,16 @@ app.post("/update", function(req, res){
   var name = req.body.name;
   var excercise = req.body.excercise;
   var weight = req.body.weight;
-  console.log("name: " + name);
-  console.log("excercise: " + excercise);
-  console.log("weight: " + weight);
+  posttodb(name, excercise, weight);
   console.log("Request for update");
   res.sendFile(path.join(__dirname+'/public/update.html'));
 });
+
+function posttodb(name, excercise, weight){
+  console.log("name: " + name);
+  console.log("excercise: " + excercise);
+  console.log("weight: " + weight);
+}
 
 app.use(express.static("public")); 
 

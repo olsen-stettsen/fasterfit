@@ -4,6 +4,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 var LocalStorage = require('node-localstorage').LocalStorage,
 localStorage = new LocalStorage('./scratch');
+app.set('view engine', 'ejs');
+
 
 const { Client } = require('pg');
 
@@ -20,7 +22,6 @@ app.post("/signup", function(req, res){
   var password = req.body.password;
   posttodb(username, email, password);
   console.log("Request for update");
-  app.set('view engine', 'ejs');
   res.sendFile(path.join(__dirname+'/public/main.ejs'));
 });
 

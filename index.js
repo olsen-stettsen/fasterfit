@@ -46,7 +46,7 @@ function getfromdb(){
   });
 }
 function onmainload(){
-  console.log(localStorage.getItem("username"));
+  console.log("aaaaaaaaaaaaaaa");
 }
 
 function posttodb(username, email, password){

@@ -45,9 +45,6 @@ function getfromdb(){
     client.end();
   });
 }
-function onmainload(){
-  console.log("aaaaaaaaaaaaaaa");
-}
 
 function posttodb(username, email, password){
   console.log("user name: " + username);

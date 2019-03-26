@@ -16,7 +16,7 @@ app.get("/", function(req, res){
     console.log("Request for root");
     res.sendFile(path.join(__dirname+'/home.html'));
 });
-app.get("/signup", function(req, res){
+app.post("/signup", function(req, res){
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;

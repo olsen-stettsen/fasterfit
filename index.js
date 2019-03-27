@@ -24,10 +24,10 @@ app.post("/signup", function(req, res){
 });
 
 function getfromdb(){
-  /*
+  
   console.log("user name: " + name);
   console.log("email: " + excercise);
-  console.log("password: " + weight);*/
+  console.log("password: " + weight);
 
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -50,14 +50,13 @@ function posttodb(username, email, password){
   console.log("user name: " + username);
   console.log("email: " + email);
   console.log("password: " + password);
-
+  
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
   
   client.connect();
-  
   client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\');', (err, res) => {
     var results = [];
     if (err) throw err;
@@ -67,7 +66,6 @@ function posttodb(username, email, password){
     client.end();
   });
   localStorage.setItem('username', username);
-  console.log("check user name: " + localStorage.getItem('username'));
 }
 
 app.use(express.static("public")); 

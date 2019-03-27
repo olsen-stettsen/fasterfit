@@ -1,5 +1,5 @@
 function onload(){
-    console.log("onload");
+    alert("Hallo!");
     //var un = "Main.js localstorage username" + localStorage.getItem('username');
     //console.log(un);
     //greet();

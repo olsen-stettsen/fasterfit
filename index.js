@@ -21,7 +21,7 @@ app.post("/signup", function(req, res){
   posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
-  res.render(path.join(__dirname+'/public/main.ejs'));
+  res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password});
 });
 
 function getfromdb(){

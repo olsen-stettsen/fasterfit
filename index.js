@@ -20,6 +20,7 @@ app.post("/signup", function(req, res){
   var password = req.body.password;
   posttodb(username, email, password);
   console.log("Request for update");
+  console.log(username + " " + email + " " + password);
   res.render(path.join(__dirname+'/public/main.ejs'));
 });
 

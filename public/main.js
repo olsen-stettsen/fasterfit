@@ -85,8 +85,8 @@ function enterexercise(){
         setsposition++;
     }
     exercise.year = d.getFullYear();
-    exercise.month = d.getMonth();
-    exercise.day = d.getDay();
+    exercise.month = d.getMonth() + 1;
+    exercise.day = d.getDate();
     exercise.hour = d.getHours();
     exercise.minutes = d.getMinutes();
     alert(JSON.stringify(exercise));

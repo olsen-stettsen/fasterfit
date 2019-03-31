@@ -84,7 +84,11 @@ function enterexercise(){
         exercise.sets[setsposition] = document.getElementById("sets").children[pos].value;
         setsposition++;
     }
-    exercise.date = JSON.stringify(d);
+    exercise.year = d.getFullYear();
+    exercise.month = d.getMonth();
+    exercise.day = d.getDay();
+    exercise.hour = d.getHours();
+    exercise.minutes = d.getMinutes();
     alert(JSON.stringify(exercise));
 }
 /****************************************
@@ -93,7 +97,12 @@ function enterexercise(){
 function Exercise(){
     this.sets = [];
     this.name;
-    this.date;
+    this.year;
+    this.month;
+    this.day;
+    this.hour;
+    this.minutes;
+
 }
 function Workouts(){
     this.exercise = [];

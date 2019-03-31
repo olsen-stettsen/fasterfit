@@ -79,9 +79,9 @@ function enterexercise(){
     var date = new Date();
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
-    for (var pos = 1; pos < alert(document.getElementById("sets").children + 1); pos += 2){
+    /*for (var pos = 1; pos < alert(document.getElementById("sets").children + 1); pos += 2){
         exercise.sets.push(document.getElementById("sets").children[pos]);
-    }
+    }*/
     alert(JSON.stringify(exercise));
 }
 /****************************************
@@ -93,8 +93,8 @@ function Set(){
 function Exercise(){
     this.sets = [];
     this.name;
+    this.date;
 }
 function Workouts(){
-    this.date;
     this.exercise = [];
 }

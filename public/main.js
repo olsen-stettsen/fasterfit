@@ -50,17 +50,29 @@ function getMonthstring(index){
  * Page interactions
  ***************************************/
 function listen(){
-    document.getElementById("mainnav1").addEventListener("click", makeaddworkoutvis);
+    document.getElementById("mainnav1").addEventListener("click", toggleaddworkoutvis);
     document.getElementById("addset").addEventListener("click", addset);
+    document.getElementById("wOback").addEventListener("click", toggleaddworkoutvis);
+    document.getElementById("wOcancel").addEventListener("click", makeworkouthidden);
+
 }
-function makeaddworkoutvis(){
-    document.getElementById("wOenter").style.display = "block";
-    document.getElementById("sets").innerHTML = "# of Reps: <input type='text' placeholder='reps'>"
+function toggleaddworkoutvis(){
+    if(document.getElementById("wOenter").style.display == "block"){
+        document.getElementById("wOenter").style.display = "none";
+    }
+    else{
+        document.getElementById("wOenter").style.display = "block";
+        if (document.getElementById("sets").children.length == 0){
+            document.getElementById("sets").innerHTML = "# of Reps: <input type='text' placeholder='reps'></input>";
+        }
+    }    
+}
+function cancelexercise(){
+    document.getElementById("sets").innerHTML = "";
 }
 function addset(){
-    document.getElementById("sets").innerHTML += "s# of Reps: <input type='text' placeholder='reps'></input>";
+    document.getElementById("sets").innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
     alert(document.getElementById("sets").children.length);
-
 }
 /****************************************
  * Objects

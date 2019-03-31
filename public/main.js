@@ -19,7 +19,7 @@ function setCalander(date){
         }
         var cell = row.insertCell(); 
         
-        if(dPos >= firstday){
+        if(dPos > firstday){
                  
             cell.innerHTML = dPos - firstday +"";      
         }

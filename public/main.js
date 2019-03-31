@@ -13,7 +13,7 @@ function setCalander(date){
     var wPos = 0;
     var firstday = getFirstDayOfTheMonth(date.getFullYear(), date.getMonth());
     var daysinmonth = getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth())
-    for (var dPos = 1; dPos < firstday + daysinmonth + 1; dPos++){
+    for (var dPos = 0; dPos < firstday + daysinmonth; dPos++){
         if(wPos == 0){
             var row = table.insertRow();
         }

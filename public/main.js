@@ -80,8 +80,8 @@ function enterexercise(){
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
-    for (var pos = 1; pos < document.getElementById("sets").children.length + 1; pos += 2){
-        exercise.sets[setsposition] = document.getElementById("sets").children[pos - 1].value;
+    for (var pos = 0; pos < document.getElementById("sets").children.length; pos += 2){
+        exercise.sets[setsposition] = document.getElementById("sets").children[pos].value;
         setsposition++;
     }
     alert(JSON.stringify(exercise));

@@ -76,7 +76,7 @@ function addset(){
     //alert(document.getElementById("sets").children.length);
 }
 function enterexercise(){
-    var date = new Date();
+    var d = new Date();
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
@@ -84,6 +84,7 @@ function enterexercise(){
         exercise.sets[setsposition] = document.getElementById("sets").children[pos].value;
         setsposition++;
     }
+    exercise.date = JSON.stringify(d);
     alert(JSON.stringify(exercise));
 }
 /****************************************

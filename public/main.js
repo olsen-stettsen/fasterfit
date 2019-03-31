@@ -17,7 +17,7 @@ function setCalander(date){
         }
         if(dPos >= getFirstDayOfTheMonth(date.getFullYear(), date.getMonth())){
             var cell = row.insertCell();      
-            cell.innerHTML = dPos;      
+            cell.innerHTML = dPos +"";      
         }
         wPos++;
         if(wPos == 7){

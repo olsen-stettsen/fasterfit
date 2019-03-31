@@ -11,14 +11,20 @@ function setCalander(date){
     // populate cal
     var table = document.getElementById("caltable");
     var wPos = 0;
-    for (var weeks = 0; weeks < getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()) / 7; weeks++) {
-        for (var dPos = 1; dPos < getNumberofDaysInTheMonth(); dPos++) {
-            if (dPos >= getFirstDayOfTheMonth(date.getFullYear(), date.getMonth())) {
-
-            }
+    for (var dPos = 1; dPos < getNumberofDaysInTheMonth(); dPos++){
+        if(wPos == 0){
+            var row = table.insertRow();
         }
-        alert(weeks);
+        if(dPos >= getFirstDayOfTheMonth(date.getFullYear(), date.getMonth())){
+            var cell = row.insertCell();      
+            cell.innerHTML = dPos;      
+        }
+        wPos++;
+        if(wPos == 7){
+            wPos = 0;
+        }
     }
+
 }
 function getNumberofDaysInTheMonth(year, month){
     return new Date(year, month + 1, 0).getDate();

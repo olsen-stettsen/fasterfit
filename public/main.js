@@ -7,7 +7,8 @@ function greet(){
 }
 function setCalander(date){
     // set month header
-    document.getElementById("header").innerHTML = getMonthstring(date.getMonth());
+    document.getElementById("headermonth").innerHTML = getMonthstring(date.getMonth());
+    document.getElementById("headeryear").innerHTML = date.getFullYear();
     // populate cal
     var table = document.getElementById("caltable");
     var wPos = 0;

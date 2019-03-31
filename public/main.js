@@ -1,10 +1,16 @@
+/***********************************
+ * Start
+ **********************************/
 function onload(){
+    // Calander
     var date = new Date();
     setCalander(date);
+    // Page interactions
+    listen();
 }
-function greet(){
-    //document.getElementById("welcometag").innerHTML = localStorage.getItem('username');
-}
+/***********************************
+ * Calander
+ **********************************/
 function setCalander(date){
     // set month header
     document.getElementById("headermonth").innerHTML = getMonthstring(date.getMonth());
@@ -29,7 +35,6 @@ function setCalander(date){
             wPos = 0;
         }
     }
-
 }
 function getNumberofDaysInTheMonth(year, month){
     return new Date(year, month + 1, 0).getDate();
@@ -40,4 +45,27 @@ function getFirstDayOfTheMonth(year, month){
 function getMonthstring(index){
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     return months[index];
+}
+/****************************************
+ * Page interactions
+ ***************************************/
+function listen(){
+    document.getElementById("mainnav1").addEventListener("click", makeaddworkoutvis);
+}
+function makeaddworkoutvis(){
+    document.getElementById("wOenter").style.display = "block";
+}
+/****************************************
+ * Objects
+ ***************************************/
+function set(){
+    this.reps;
+}
+function exercise(){
+    this.sets = [];
+    this.name;
+}
+function workout(){
+    this.date;
+    this.exercise = [];
 }

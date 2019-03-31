@@ -81,7 +81,8 @@ function enterexercise(){
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
     for (var pos = 1; pos < document.getElementById("sets").children + 1; pos += 2){
-        var temp = document.getElementById("sets").children[pos].innerHTML
+        var temp = document.getElementById("sets").children[pos].value;
+        alert(temp);
         exercise.sets[setsposition] = temp;
         setsposition++;
     }

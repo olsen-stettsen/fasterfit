@@ -11,5 +11,5 @@ function setCalander(){
     document.getElementById("header").innerHTML = months[d.getMonth()];
     // populate cal
     var activedate = d.getDate();
-    alert(activedate);
+    alert(lastday(d.getFullYear(),d.getMonth()));
 }

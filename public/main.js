@@ -53,7 +53,7 @@ function listen(){
     document.getElementById("mainnav1").addEventListener("click", toggleaddworkoutvis);
     document.getElementById("addset").addEventListener("click", addset);
     document.getElementById("wOback").addEventListener("click", toggleaddworkoutvis);
-    document.getElementById("wOcancel").addEventListener("click", makeworkouthidden);
+    document.getElementById("wOcancel").addEventListener("click", cancelexercise);
 
 }
 function toggleaddworkoutvis(){

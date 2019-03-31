@@ -11,7 +11,7 @@ function setCalander(date){
     // populate cal
     var table = document.getElementById("caltable");
     var wPos = 0;
-    for (var dPos = 1; dPos < getNumberofDaysInTheMonth(); dPos++){
+    for (var dPos = 1; dPos < getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()); dPos++){
         if(wPos == 0){
             var row = table.insertRow();
         }

@@ -79,17 +79,15 @@ function enterexercise(){
     var date = new Date();
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
+    var setsposition = 0;
     for (var pos = 1; pos < alert(document.getElementById("sets").children + 1); pos += 2){
-        exercise.sets[pos] = document.getElementById("sets").children[pos];
+        exercise.sets[setsposition] = document.getElementById("sets").children[pos];
     }
     alert(JSON.stringify(exercise));
 }
 /****************************************
  * Objects
  ***************************************/
-function Set(){
-    this.reps;
-}
 function Exercise(){
     this.sets = [];
     this.name;

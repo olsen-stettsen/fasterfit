@@ -80,12 +80,13 @@ function enterexercise(){
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
+    alert(document.getElementById("sets").children.length);/*
     for (var pos = 1; pos < document.getElementById("sets").children + 1; pos += 2){
         var temp = document.getElementById("sets").children.length;
         alert(temp);
         exercise.sets[setsposition] = temp;
         setsposition++;
-    }
+    }*/
     alert(JSON.stringify(exercise));
 }
 /****************************************

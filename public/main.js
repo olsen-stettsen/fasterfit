@@ -80,6 +80,7 @@ function enterexercise(){
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
+    exercise.sets[setsposition] = "dd";
     for (var pos = 1; pos < alert(document.getElementById("sets").children + 1); pos += 2){
         exercise.sets[setsposition] = "1";//document.getElementById("sets").children[pos];
         setsposition++;

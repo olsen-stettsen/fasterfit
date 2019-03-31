@@ -10,7 +10,6 @@ function setCalander(date){
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     document.getElementById("header").innerHTML = months[d.getMonth()];
     // populate cal
-    var activedate = date.getDate();
     alert(getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()));
     alert(getFirstDayOfTheMonth(date.getFullYear(), date.getMonth()));
 

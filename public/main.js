@@ -55,10 +55,10 @@ function listen(){
 }
 function makeaddworkoutvis(){
     document.getElementById("wOenter").style.display = "block";
-    document.getElementById("sets").innerHTML = "<input type='text' placeholder='reps'>"
+    document.getElementById("sets").innerHTML = "# of Reps: <input type='text' placeholder='reps'>"
 }
 function addset(){
-    document.getElementById("sets").innerHTML += "<input type='text' placeholder='reps'></input>";
+    document.getElementById("sets").innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
 }
 /****************************************
  * Objects

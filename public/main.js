@@ -73,22 +73,28 @@ function cancelexercise(){
 }
 function addset(){
     document.getElementById("sets").innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
-    alert(document.getElementById("sets").children.length);
+    //alert(document.getElementById("sets").children.length);
 }
 function enterexercise(){
-    alert("Enter");
+    var date = new Date();
+    var exercise = new Exercise();
+    exercise.name = document.getElementById("exercisename").value;
+    for (var pos = 1; pos < alert(document.getElementById("sets").children + 1); pos += 2){
+        exercise.sets.push(document.getElementById("sets").children[pos]);
+    }
+    alert(JSON.stringify(exercise));
 }
 /****************************************
  * Objects
  ***************************************/
-function set(){
+function Set(){
     this.reps;
 }
-function exercise(){
+function Exercise(){
     this.sets = [];
     this.name;
 }
-function workout(){
+function Workouts(){
     this.date;
     this.exercise = [];
 }

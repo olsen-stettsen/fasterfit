@@ -1,5 +1,5 @@
 function onload(){
-    //greet();
+    setCalander();
 }
 function greet(){
     //document.getElementById("welcometag").innerHTML = localStorage.getItem('username');

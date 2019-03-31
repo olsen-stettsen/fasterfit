@@ -12,6 +12,6 @@ function setCalander(){
     // populate cal
     var activedate = d.getDate();
     var tempdate = newDate();
-    tempdate.setDate(1);
+    //tempdate.setDate(1);
     alert(tempdate.getDate());
 }

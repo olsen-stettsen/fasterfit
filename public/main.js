@@ -81,7 +81,8 @@ function enterexercise(){
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
     for (var pos = 1; pos < document.getElementById("sets").children + 1; pos += 2){
-        exercise.sets[setsposition] = document.getElementById("sets").children.length;
+        var temp = document.getElementById("sets").children[pos].innerHTML
+        exercise.sets[setsposition] = temp;
         setsposition++;
     }
     alert(JSON.stringify(exercise));

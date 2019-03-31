@@ -12,7 +12,12 @@ function setCalander(){
     // populate cal
     var activedate = d.getDate();
     alert(getNumberofDaysInTheMonth(d.getFullYear(), d.getMonth() + 1));
+    alert(getFirstDayOfTheMonth(d.getFullYear(), d.getMonth() + 1));
+
 }
 function getNumberofDaysInTheMonth(year, month){
     return new Date(year, month, 0).getDate();
+}
+function getFirstDayOfTheMonth(year, month){
+    return new Date(year, month, 1).getDate()
 }

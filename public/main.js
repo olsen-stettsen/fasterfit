@@ -6,12 +6,19 @@ function greet(){
     //document.getElementById("welcometag").innerHTML = localStorage.getItem('username');
 }
 function setCalander(date){
-    // set month
+    // set month header
     document.getElementById("header").innerHTML = getMonthstring(date.getMonth());
     // populate cal
-    alert(getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()));
-    alert(getFirstDayOfTheMonth(date.getFullYear(), date.getMonth()));
+    var table = document.getElementById("caltable");
+    var wPos = 0;
+    for (var weeks = 0; weeks < getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()) / 7; weeks++) {
+        for (var dPos = 1; dPos < getNumberofDaysInTheMonth(); dPos++) {
+            if (dPos >= getFirstDayOfTheMonth(date.getFullYear(), date.getMonth())) {
 
+            }
+        }
+        alert(weeks);
+    }
 }
 function getNumberofDaysInTheMonth(year, month){
     return new Date(year, month + 1, 0).getDate();

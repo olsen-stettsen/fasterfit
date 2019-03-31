@@ -51,9 +51,14 @@ function getMonthstring(index){
  ***************************************/
 function listen(){
     document.getElementById("mainnav1").addEventListener("click", makeaddworkoutvis);
+    document.getElementById("addset").addEventListener("click", addset);
 }
 function makeaddworkoutvis(){
     document.getElementById("wOenter").style.display = "block";
+    document.getElementById("sets").innerHTML = "<input type='text' placeholder='reps'>"
+}
+function addset(){
+    document.getElementById("sets").innerHTML += "<input type='text' placeholder='reps'></input>";
 }
 /****************************************
  * Objects

@@ -1,22 +1,22 @@
 function onload(){
-    setCalander();
+    var date = new Date();
+    setCalander(date);
 }
 function greet(){
     //document.getElementById("welcometag").innerHTML = localStorage.getItem('username');
 }
-function setCalander(){
+function setCalander(date){
     // set month
-    var d = new Date();
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     document.getElementById("header").innerHTML = months[d.getMonth()];
     // populate cal
-    var activedate = d.getDate();
-    alert(getNumberofDaysInTheMonth(d.getFullYear(), d.getMonth() + 1));
-    alert(getFirstDayOfTheMonth(d.getFullYear(), d.getMonth()));
+    var activedate = date.getDate();
+    alert(getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()));
+    alert(getFirstDayOfTheMonth(date.getFullYear(), date.getMonth()));
 
 }
 function getNumberofDaysInTheMonth(year, month){
-    return new Date(year, month, 0).getDate();
+    return new Date(year, month + 1, 0).getDate();
 }
 function getFirstDayOfTheMonth(year, month){
     return new Date(year, month, 1).getDay();

@@ -58,7 +58,7 @@ function makeaddworkoutvis(){
     document.getElementById("sets").innerHTML = "# of Reps: <input type='text' placeholder='reps'>"
 }
 function addset(){
-    document.getElementById("sets").innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
+    document.getElementById("sets").innerHTML += "s# of Reps: <input type='text' placeholder='reps'></input>";
     alert(document.getElementById("sets").children.length);
 
 }

@@ -8,7 +8,7 @@ function greet(){
 function setCalander(date){
     // set month
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    document.getElementById("header").innerHTML = months[date.getMonth()];
+    document.getElementById("header").innerHTML = getMonthstring(date.getMonth());
     // populate cal
     alert(getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth()));
     alert(getFirstDayOfTheMonth(date.getFullYear(), date.getMonth()));
@@ -19,4 +19,8 @@ function getNumberofDaysInTheMonth(year, month){
 }
 function getFirstDayOfTheMonth(year, month){
     return new Date(year, month, 1).getDay();
+}
+function getMonthstring(index){
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    return month[index];
 }

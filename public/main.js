@@ -16,7 +16,7 @@ function setCalander(date){
             var row = table.insertRow();
         }
         if(dPos >= getFirstDayOfTheMonth(date.getFullYear(), date.getMonth())){
-            var cell = row.insertCell();      
+            var cell = row.insertCell(wPos);      
             cell.innerHTML = dPos +"";      
         }
         wPos++;

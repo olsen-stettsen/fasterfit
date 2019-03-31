@@ -55,7 +55,7 @@ function listen(){
 }
 function makeaddworkoutvis(){
     document.getElementById("wOenter").style.display = "block";
-    alert(document.getElementById("sets").childElementCount());
+    alert(document.getElementById("sets").children.length);
     document.getElementById("sets").innerHTML = "# of Reps: <input type='text' placeholder='reps'>"
 }
 function addset(){

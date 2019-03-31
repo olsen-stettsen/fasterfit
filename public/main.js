@@ -54,7 +54,7 @@ function listen(){
     document.getElementById("addset").addEventListener("click", addset);
     document.getElementById("wOback").addEventListener("click", toggleaddworkoutvis);
     document.getElementById("wOcancel").addEventListener("click", cancelexercise);
-
+    document.getElementById("submitexercise").addEventListener("click", enterexercise);
 }
 function toggleaddworkoutvis(){
     if(document.getElementById("wOenter").style.display == "block"){
@@ -69,10 +69,14 @@ function toggleaddworkoutvis(){
 }
 function cancelexercise(){
     document.getElementById("sets").innerHTML = "";
+    toggleaddworkoutvis();
 }
 function addset(){
     document.getElementById("sets").innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
     alert(document.getElementById("sets").children.length);
+}
+function enterexercise(){
+    alert("Enter");
 }
 /****************************************
  * Objects

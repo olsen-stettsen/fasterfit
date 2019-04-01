@@ -48,7 +48,7 @@ function getfromdb(){
     ssl: true,
   });
   client.connect();
-  const query = client.query('SELECT * FROM items ORDER BY id ASC;');
+  const query = client.query('SELECT * FROM account;');
     // Stream results back one row at a time
     query.on('row', (row) => {
       results.push(row);

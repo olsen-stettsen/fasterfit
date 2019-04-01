@@ -15,6 +15,7 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname+'/home.html'));
 });
 app.post("/main", function(req, res){
+  console.log(req);
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
@@ -24,7 +25,7 @@ app.post("/main", function(req, res){
   getfromdb();
   setTimeout(function(){ 
     var workoutdata = localStorage.getItem("results");
-    console.log("workoutdata: " + workoutdata);
+    //console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });

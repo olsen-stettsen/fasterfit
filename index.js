@@ -43,19 +43,7 @@ function getfromdb(){
   return JSON.stringify(results);
 }*/
 function getfromdb(){
-  const results = [];
-  client.connect();
-    // SQL Query > Select Data
-    const query = client.query('SELECT * FROM account;');
-    // Stream results back one row at a time
-    query.on('row', (row) => {
-      results.push(row);
-    });
-    // After all data is returned, close connection and return results
-    query.on('end', () => {
-      done();
-      return res.json(results);
-    });
+  return "hello";
 }
 
 function posttodb(username, email, password){

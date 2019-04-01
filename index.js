@@ -22,6 +22,7 @@ app.post("/main", function(req, res){
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   var workoutdata = getfromdb();
+  console.log(workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
 function getfromdb(){
@@ -35,7 +36,7 @@ function getfromdb(){
   var count = 0;
   client.query('SELECT * FROM account;', (err, res) => {
     results = res.rows;
-    console.log(results);
+    //console.log(results);
     client.end();
     return JSON.stringify(results);
   })

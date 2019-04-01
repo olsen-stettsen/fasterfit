@@ -43,27 +43,25 @@ function getfromdb(){
   return JSON.stringify(results);
 }*/
 function getfromdb(){
-  const query = {
-    // give the query a unique name
-    name: 'fetch-user',
-    text: 'SELECT * FROM account',
-    values: [1]
-  }
-  
-  // callback
-  client.query(query, (err, res) => {
-    if (err) {
-      console.log(err.stack)
-    } else {
-      console.log(res.rows[0])
+  const results = [];
+    pg.connect(connectionString, (err, client, done) => {
+    if(err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
     }
-  })
-  var val = "";
-  // promise
-  client.query(query)
-    .then(res => val = res.rows[0])
-    .catch(e => console.error(e.stack))
-    return val;
+    // SQL Query > Select Data
+    const query = client.query('SELECT * FROM account;');
+    // Stream results back one row at a time
+    query.on('row', (row) => {
+      results.push(row);
+    });
+    // After all data is returned, close connection and return results
+    query.on('end', () => {
+      done();
+      return res.json(results);
+    });
+  });
 }
 
 function posttodb(username, email, password){

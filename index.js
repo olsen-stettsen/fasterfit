@@ -21,6 +21,7 @@ app.post("/main", function(req, res){
   posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
+  getfromdb();
   var workoutdata = localStorage.getItem("results");
   console.log("workoutdata: " + workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});

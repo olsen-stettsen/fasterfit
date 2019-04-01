@@ -93,9 +93,7 @@ function enterexercise(){
     postexercise(exercise);
 }
 function postexercise(exercise){
-    var data = JSON.stringify({
-        body: exercise
-    })
+    var body = { 'value': JSON.stringify(exercise)};
     alert(JSON.stringify(body));
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -105,7 +103,7 @@ function postexercise(exercise){
     };
     xmlhttp.open("POST", "/writeworkout", true);
     xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xmlhttp.send(data);
+    xmlhttp.send(body);
 
 }
 function getdbfromhtml(){

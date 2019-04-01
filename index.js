@@ -34,6 +34,7 @@ function getfromdb(){
   var results = [];
   var count = 0;
   client.query('SELECT * FROM account;', (err, res) => {
+    results[0] = res.rows[0];
     
     client.end();
   });

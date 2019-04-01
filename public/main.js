@@ -102,6 +102,9 @@ function postexercise(exercise){
     xmlhttp.send();
 
 }
+function getdbfromhtml(){
+    alert(document.getElementById("workoutdata").innerHTML);
+}
 /****************************************
  * Objects
  ***************************************/

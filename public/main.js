@@ -94,7 +94,7 @@ function enterexercise(){
 }
 function postexercise(exercise){
     var data = JSON.stringify({
-        body: JSON.stringify(exercise)
+        body: exercise
     })
     alert(JSON.stringify(body));
     var xmlhttp = new XMLHttpRequest();

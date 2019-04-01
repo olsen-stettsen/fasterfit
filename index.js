@@ -31,8 +31,6 @@ app.post("/main", function(req, res){
 });
 app.post("/writeworkout", function(req, res){
   console.log(req);
-  var req2 = JSON.parse(req);
-  console.log(req2);
   postworkouttodb();
 });
 function getfromdb(){

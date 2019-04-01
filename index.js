@@ -37,8 +37,8 @@ function getfromdb(){
   client.query('SELECT * FROM account;', (err, res) => {
     results = res.rows;
     //console.log(results);
-    client.end();
     return results;
+    client.end();
   })
 }
 

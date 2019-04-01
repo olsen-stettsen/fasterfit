@@ -94,6 +94,7 @@ function enterexercise(){
 }
 function postexercise(exercise){
     var body = { body: exercise};
+    alert(JSON.stringify(body));
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

@@ -44,12 +44,7 @@ function getfromdb(){
 }*/
 function getfromdb(){
   const results = [];
-    pg.connect(connectionString, (err, client, done) => {
-    if(err) {
-      done();
-      console.log(err);
-      return res.status(500).json({success: false, data: err});
-    }
+  client.connect();
     // SQL Query > Select Data
     const query = client.query('SELECT * FROM account;');
     // Stream results back one row at a time
@@ -61,7 +56,6 @@ function getfromdb(){
       done();
       return res.json(results);
     });
-  });
 }
 
 function posttodb(username, email, password){

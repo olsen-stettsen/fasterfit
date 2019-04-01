@@ -26,7 +26,7 @@ app.post("/main", function(req, res){
     var workoutdata = localStorage.getItem("results");
     console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
-  }, 6000);
+  }, 1000);
 });
 app.post("/writeworkout", function(req, res){
   console.log("jjjjjjj");

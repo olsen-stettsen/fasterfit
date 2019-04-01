@@ -36,8 +36,8 @@ function getfromdb(){
   var count = 0;
   client.query('SELECT * FROM account;', (err, res) => {
     results = res.rows;
-    //console.log(results);
-    return JSON.stringify(results);
+    console.log(results);
+    return "hello";
     client.end();
   })
 }

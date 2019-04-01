@@ -34,7 +34,7 @@ function getfromdb(){
   var results = [];
   var count = 0;
   client.query('SELECT * FROM account;', (err, res) => {
-    console.log(err, res)
+    console.log(res)
     client.end()
   })
   //results[0] = "dd";

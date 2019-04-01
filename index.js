@@ -31,15 +31,15 @@ function getfromdb(){
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
-  
+  var s = "";
   client.connect();
   client.query('SELECT * FROM account;', (err, res) => {
     results = res.rows;
     //console.log(results);
-    var s = "hello";
+    s = "hello";
     client.end();
-    return s;
   })
+  return s;
 }
 
 function posttodb(username, email, password){

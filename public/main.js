@@ -99,8 +99,8 @@ function postexercise(exercise){
             //alert(this.responseText)
         }
     };
-    xmlhttp.open("POST", "index.js?q=" + exercise, true);
-    xmlhttp.send();
+    xmlhttp.open("POST", "/writeworkout", true);
+    xmlhttp.send(JSON.stringify(exercise));
 
 }
 function getdbfromhtml(){

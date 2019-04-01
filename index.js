@@ -30,8 +30,7 @@ app.post("/main", function(req, res){
   }, 1000);
 });
 app.post("/writeworkout", function(req, res){
-  var thing = JSON.stringify(req);
-  console.log(thing);
+  console.log(req);
   postworkouttodb();
 });
 function getfromdb(){

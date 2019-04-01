@@ -22,8 +22,7 @@ app.post("/main", function(req, res){
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   getfromdb();
-  var workoutdata = "";
-  setTimeout(function(){ workoutdata = localStorage.getItem("results"); }, 3000);
+  var workoutdata = localStorage.getItem("results");
   console.log("workoutdata: " + workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });

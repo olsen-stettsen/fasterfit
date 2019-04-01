@@ -7,6 +7,7 @@ function onload(){
     setCalander(date);
     // Page interactions
     listen();
+    getdbfromhtml();
 }
 /***********************************
  * Calander

@@ -93,7 +93,7 @@ function enterexercise(){
     postexercise(exercise);
 }
 function postexercise(exercise){
-    var body = { value: steve };
+    var body = { value: "steve" };
     alert(JSON.stringify(body));
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {

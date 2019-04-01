@@ -41,7 +41,6 @@ function getfromdb(){
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })
-  setTimeout
 }
 
 function posttodb(username, email, password){

@@ -22,9 +22,11 @@ app.post("/main", function(req, res){
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   getfromdb();
-  var workoutdata = localStorage.getItem("results");
-  console.log("workoutdata: " + workoutdata);
-  res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
+  setTimeout(function(){ 
+    var workoutdata = localStorage.getItem("results");
+    console.log("workoutdata: " + workoutdata);
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
+  }, 6000);
 });
 app.post("/writeworkout", function(req, res){
   console.log("jjjjjjj");

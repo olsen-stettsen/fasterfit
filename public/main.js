@@ -103,6 +103,7 @@ function postexercise(exercise){
         }
     };
     xmlhttp.open("POST", "/writeworkout", true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xmlhttp.send(JSON.stringify(temp));
 
 }

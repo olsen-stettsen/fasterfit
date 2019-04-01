@@ -21,25 +21,20 @@ app.post("/main", function(req, res){
   posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
-  var workoutdata = getfromdb();
+  var workoutdata = localStorage.getItem("results");
   console.log("workoutdata: " + workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
 function getfromdb(){
-  var results = [];
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
-  var s = "";
   client.connect();
   client.query('SELECT * FROM account;', (err, res) => {
-    results = res.rows;
-    //console.log(results);
-    s = "hello";
+    localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })
-  return s;
 }
 
 function posttodb(username, email, password){

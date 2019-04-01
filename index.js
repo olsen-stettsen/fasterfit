@@ -29,7 +29,7 @@ app.post("/main", function(req, res){
   }, 1000);
 });
 app.post("/writeworkout", function(req, res){
-  console.log(req);
+  console.log(JSON.stringify(req));
   postworkouttodb();
 });
 function getfromdb(){

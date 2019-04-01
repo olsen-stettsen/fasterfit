@@ -24,7 +24,7 @@ app.post("/main", function(req, res){
   var workoutdata = getfromdb();
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
-
+/*
 function getfromdb(){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -34,16 +34,36 @@ function getfromdb(){
   client.connect();
   var results = [];
   var count = 0;
-  const query = client.query('SELECT * FROM account;', (err, res) => {
-    query.on('row', (row) => {
-      results[count] = row;
-      count++;
-    });
+  client.query('SELECT * FROM account;', (err, res) => {
+    
     client.end();
   });
   //results[0] = "dd";
   //results[1] = "ee";
   return JSON.stringify(results);
+}*/
+function getfromdb(){
+  const query = {
+    // give the query a unique name
+    name: 'fetch-user',
+    text: 'SELECT * FROM account',
+    values: [1]
+  }
+  
+  // callback
+  client.query(query, (err, res) => {
+    if (err) {
+      console.log(err.stack)
+    } else {
+      console.log(res.rows[0])
+    }
+  })
+  var val = "";
+  // promise
+  client.query(query)
+    .then(res => val = res.rows[0])
+    .catch(e => console.error(e.stack))
+    return val;
 }
 
 function posttodb(username, email, password){

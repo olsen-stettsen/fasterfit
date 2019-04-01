@@ -42,6 +42,8 @@ function getfromdb(){
     }
     client.end();
   });
+  results[0] = "dd";
+  results[1] = "ee";
   return JSON.stringify(results);
 }
 

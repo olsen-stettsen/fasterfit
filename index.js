@@ -37,8 +37,8 @@ function getfromdb(){
     results = res.rows;
     //console.log(results);
     var s = "hello";
-    return s;
     client.end();
+    return s;
   })
 }
 

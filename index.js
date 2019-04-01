@@ -14,37 +14,35 @@ app.get("/", function(req, res){
     console.log("Request for root");
     res.sendFile(path.join(__dirname+'/home.html'));
 });
-app.post("/signup", function(req, res){
+app.post("/main", function(req, res){
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
   posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
-  res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password});
+  var workoutdata = getfromdb();
+  res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
 
 function getfromdb(){
-  
-  console.log("user name: " + name);
-  console.log("email: " + excercise);
-  console.log("password: " + weight);
-
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
   
   client.connect();
-  
+  var results = [];
   client.query('SELECT * FROM account;', (err, res) => {
-    var results = [];
     if (err) throw err;
+    var count = 0;
     for (let row of res.rows) {
-      results.push(row);
+      results[count] = row;
+      count++;
     }
     client.end();
   });
+  return JSON.stringify(results);
 }
 
 function posttodb(username, email, password){

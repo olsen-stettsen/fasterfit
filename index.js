@@ -38,7 +38,7 @@ function getfromdb(){
     results = res.rows;
     //console.log(results);
     client.end();
-    return JSON.stringify(results);
+    return results;
   })
 }
 

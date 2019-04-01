@@ -35,12 +35,10 @@ function getfromdb(){
   var count = 0;
   client.query('SELECT * FROM account;', (err, res) => {
     results = res.rows;
+    console.log(results);
+    return JSON.stringify(results);
     client.end()
   })
-  //results[0] = "dd";
-  //results[1] = "ee";
-  console.log(results)
-  return JSON.stringify(results);
 }
 
 function posttodb(username, email, password){

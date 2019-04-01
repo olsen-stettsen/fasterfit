@@ -25,16 +25,17 @@ app.post("/main", function(req, res){
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
 function getfromdb(){
+  var results = [];
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
   
   client.connect();
-  var results = [];
   var count = 0;
   client.query('SELECT * FROM account;', (err, res) => {
-    console.log(res)
+    results = res.rows;
+    console.log(res.rows)
     client.end()
   })
   //results[0] = "dd";

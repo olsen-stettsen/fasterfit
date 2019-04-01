@@ -22,7 +22,8 @@ app.post("/main", function(req, res){
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   getfromdb();
-  var workoutdata = localStorage.getItem("results");
+  var workoutdata;
+  setTimeout(function(){ workoutdata = localStorage.getItem("results"); }, 3000);
   console.log("workoutdata: " + workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
@@ -40,6 +41,7 @@ function getfromdb(){
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })
+  setTimeout
 }
 
 function posttodb(username, email, password){

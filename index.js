@@ -43,7 +43,21 @@ function getfromdb(){
   return JSON.stringify(results);
 }*/
 function getfromdb(){
-  return "hello";
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  client.connect();
+  const query = client.query('SELECT * FROM items ORDER BY id ASC;');
+    // Stream results back one row at a time
+    query.on('row', (row) => {
+      results.push(row);
+    });
+    // After all data is returned, close connection and return results
+    query.on('end', () => {
+      done();
+      return res.json(results);
+    });
 }
 
 function posttodb(username, email, password){

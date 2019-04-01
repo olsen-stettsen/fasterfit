@@ -33,9 +33,11 @@ function getfromdb(){
   
   client.connect();
   var results = [];
+  var res2 = "";
   client.query('SELECT * FROM account', (err, res) => {
     if (err) throw err;
     var count = 0;
+    res2 = res;
     for (let row of res.rows) {
       results[count] = row;
       count++;
@@ -44,7 +46,7 @@ function getfromdb(){
   });
   //results[0] = "dd";
   //results[1] = "ee";
-  return JSON.stringify(results);
+  return JSON.stringify(res2);
 }
 
 function posttodb(username, email, password){

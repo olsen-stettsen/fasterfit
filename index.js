@@ -22,7 +22,7 @@ app.post("/main", function(req, res){
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   var workoutdata = getfromdb();
-  console.log(workoutdata);
+  console.log("workoutdata: " + workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
 function getfromdb(){

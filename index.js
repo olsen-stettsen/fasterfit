@@ -34,10 +34,10 @@ function getfromdb(){
   client.connect();
   var results = [];
   var res2 = "";
-  client.query('\dt;', (err, res) => {
+  client.query('\dt', (err, res) => {
     if (err) throw err;
     var count = 0;
-    res2 = res;
+    res2 = res.rows[0];
     for (let row of res.rows) {
       results[count] = row;
       count++;

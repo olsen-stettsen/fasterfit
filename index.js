@@ -34,7 +34,7 @@ function getfromdb(){
   client.connect();
   var results = [];
   var res2 = "";
-  client.query('SELECT * FROM account', (err, res) => {
+  client.query('SELECT * FROM account;', (err, res) => {
     if (err) throw err;
     var count = 0;
     res2 = res;

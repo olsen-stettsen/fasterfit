@@ -27,7 +27,7 @@ app.post("/main", function(req, res){
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
 app.post("/writeworkout", function(req, res){
-  console.log(req.q);
+  console.log("jjjjjjj");
   postworkouttodb();
 });
 function getfromdb(){

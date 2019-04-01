@@ -101,9 +101,9 @@ function postexercise(exercise){
             //alert(this.responseText)
         }
     };
-    xmlhttp.open("POST", "/writeworkout", true);
+    xmlhttp.open("POST", "/writeworkout");
     xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xmlhttp.send(JSON.stringify(body));
+    xmlhttp.send(JSON.stringify({ "email": "hello@user.com", "response": { "name": "Tester" } }));
 
 }
 function getdbfromhtml(){

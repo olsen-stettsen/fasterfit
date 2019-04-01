@@ -89,7 +89,18 @@ function enterexercise(){
     exercise.day = d.getDate();
     exercise.hour = d.getHours();
     exercise.minutes = d.getMinutes();
-    alert(JSON.stringify(exercise));
+    postexercise(exercise);
+}
+function postexercise(exercise){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert(this.responseText)
+        }
+    };
+    xmlhttp.open("POST", "index.js?q=" + exercise, true);
+    xmlhttp.send();
+
 }
 /****************************************
  * Objects

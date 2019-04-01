@@ -26,6 +26,10 @@ app.post("/main", function(req, res){
   console.log("workoutdata: " + workoutdata);
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
+app.post("/writeworkout", function(req, res){
+  console.log(req)
+  postworkouttodb();
+});
 function getfromdb(){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -58,6 +62,9 @@ function posttodb(username, email, password){
     client.end();
   });
   localStorage.setItem('username', username);
+}
+function postworkouttodb(){
+  console.log("posting to workout to db");
 }
 
 app.use(express.static("public")); 

@@ -33,13 +33,17 @@ function getfromdb(){
   
   client.connect();
   var results = [];
-  client.query('SELECT * FROM account;', (err, res) => {
+  client.query('SELECT * FROM account', (err, res) => {
     if (err) throw err;
     var count = 0;
-    results[0] = "dd";
-    //results[1] = res.rows[0]
+    for (let row of res.rows) {
+      results[count] = row;
+      count++;
+    }
     client.end();
   });
+  //results[0] = "dd";
+  //results[1] = "ee";
   return JSON.stringify(results);
 }
 

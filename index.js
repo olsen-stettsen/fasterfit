@@ -24,7 +24,6 @@ app.post("/main", function(req, res){
   var workoutdata = getfromdb();
   res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});
 });
-/*
 function getfromdb(){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -41,23 +40,6 @@ function getfromdb(){
   //results[0] = "dd";
   //results[1] = "ee";
   return JSON.stringify(results);
-}*/
-function getfromdb(){
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });
-  client.connect();
-  const query = client.query('SELECT * FROM account;');
-    // Stream results back one row at a time
-    query.on('row', (row) => {
-      results.push(row);
-    });
-    // After all data is returned, close connection and return results
-    query.on('end', () => {
-      done();
-      return res.json(results);
-    });
 }
 
 function posttodb(username, email, password){

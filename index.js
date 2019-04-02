@@ -30,7 +30,7 @@ app.post("/main", function(req, res){
   }, 1000);
 });
 app.post("/writeworkout", function(req, res){
-  console.log(req);
+  console.log(req.body);
   //console.log("req.body.var1 = " + req.body.var1);
   postworkouttodb();
 });

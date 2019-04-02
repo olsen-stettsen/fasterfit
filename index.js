@@ -31,7 +31,7 @@ app.post("/main", function(req, res){
 });
 app.use(express.json());
 app.post("/writeworkout", function(req, res){
-  console.log("req.body = " + req.body);
+  console.log("req.body = " + JSON.stringify(req.body));
   postworkouttodb();
 });
 function getfromdb(){

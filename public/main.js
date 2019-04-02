@@ -93,10 +93,10 @@ function enterexercise(){
     postexercise(JSON.stringify(exercise));
 }
 function postexercise(exercise){
-    var body = {};
+    var bodie = {};
     body.var1 = "yep";
     body.var2 = "nope";
-    var json = JSON.stringify(body);
+    var json = JSON.stringify(bodie);
     alert(json);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {

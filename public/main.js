@@ -93,23 +93,16 @@ function enterexercise(){
     postexercise(JSON.stringify(exercise));
 }
 function postexercise(exercise){
-    $.ajax({
-        global: false,
-        type: 'POST',
-        url: '/writeworkout',
-        dataType: 'html',
-        data: {
-            name: $("#profile_name").val(),
-            surname: $("#profile_surname").val(),
-            age: $("#profile_age").val()
-        },
-        success: function (result) {
-            console.log(result);
-        },
-        error: function (request, status, error) {
-            serviceError();
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            //alert(this.responseText)
         }
-    });
+    };
+    xmlhttp.open("POST", "/writeworkout", true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xmlhttp.send(exercise);
+
 }
 function getdbfromhtml(){
     //alert(document.getElementById("workoutdata").innerHTML);

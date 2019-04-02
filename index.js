@@ -15,7 +15,7 @@ app.get("/", function(req, res){
     res.sendFile(path.join(__dirname+'/home.html'));
 });
 app.post("/main", function(req, res){
-  console.log(req);
+  //console.log(req);
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
@@ -30,7 +30,7 @@ app.post("/main", function(req, res){
   }, 1000);
 });
 app.post("/writeworkout", function(req, res){
-  console.log("hello");
+  console.log(req);
   //console.log("req.body.var1 = " + req.body.var1);
   postworkouttodb();
 });

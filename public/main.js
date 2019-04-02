@@ -101,7 +101,7 @@ function postexercise(exercise){
     };
     xmlhttp.open("POST", "/writeworkout", true);
     xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-    xmlhttp.send({ "email": "hello@user.com", "response": { "name": "Tester" } });
+    xmlhttp.send("{ 'email': 'hello@user.com', 'response': { 'name': 'Tester' } }");
 
 }
 function getdbfromhtml(){

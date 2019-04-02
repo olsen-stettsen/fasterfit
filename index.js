@@ -30,7 +30,10 @@ app.post("/main", function(req, res){
   }, 1000);
 });
 app.post("/writeworkout", function(req, res){
-  console.log(req.body);
+  var thingy = new Thingy();
+  thingy = JSON.parse(req.body);
+
+  console.log(JSON.stringify(thingy));
   res.send(req);
   //console.log("req.body.var1 = " + req.body.var1);
   postworkouttodb();
@@ -78,3 +81,7 @@ app.use(express.static("public"));
 app.listen(process.env.PORT || 5000, function(){
     console.log('Server is running on port 5000');
 });
+function Thingy(){
+  this.one;
+  this.two;
+}

@@ -93,20 +93,21 @@ function enterexercise(){
     postexercise(JSON.stringify(exercise));
 }
 function postexercise(exercise){
-    var bodie = {};
+    var body = {};
     body.var1 = "yep";
     body.var2 = "nope";
-    var json = JSON.stringify(bodie);
-    alert(json);
+    var json = JSON.stringify(body);
+    alert(JSON.stringify(body));
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText)
+            //alert(this.responseText)
         }
     };
     xmlhttp.open("POST", "/writeworkout", true);
-    xmlhttp.setRequestHeader('Content-Type', 'application/json');
-    xmlhttp.send(json);
+    xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xmlhttp.send(JSON.stringify({ "email": "hello@user.com", "response": { "name": "Tester" } }));
+
 }
 function getdbfromhtml(){
     //alert(document.getElementById("workoutdata").innerHTML);

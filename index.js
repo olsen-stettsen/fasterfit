@@ -29,11 +29,11 @@ app.post("/main", function(req, res){
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });
-app.post("/writeworkout", function(req, res){
+app.post("/writeworkout", function(req, res){/*
   var thingy = new Thingy();
   thingy = JSON.parse(req.body);
 
-  console.log(JSON.stringify(thingy));
+  console.log(JSON.stringify(thingy));*/
   res.send(req);
   //console.log("req.body.var1 = " + req.body.var1);
   postworkouttodb();

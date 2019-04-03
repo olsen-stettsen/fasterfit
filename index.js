@@ -22,7 +22,28 @@ app.post("/main", function(req, res){
   posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
-  getfromdb();
+  getfromdb(username);
+  setTimeout(function(){ 
+    var workoutdata = localStorage.getItem("results");
+    //console.log("workoutdata: " + workoutdata);
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
+  }, 1000);
+});
+app.post("/signin", function(req, res){
+  var email = req.body.email;
+  var password = req.body.password;
+
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  client.connect();
+  client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
+    localStorage.setItem("results", JSON.stringify(res.rows));
+    client.end();
+  })
+
+  getfromdb(username);
   setTimeout(function(){ 
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
@@ -57,7 +78,7 @@ function getfromdb(){
     ssl: true,
   });
   client.connect();
-  client.query('SELECT * FROM account;', (err, res) => {
+  client.query('SELECT * FROM exercise WHERE user_name = \'' + username + '\';', (err, res) => {
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })

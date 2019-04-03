@@ -43,8 +43,9 @@ app.post("/signin", function(req, res){
     client.end();
   })
 
-  getfromdb(username);
+  getfromdb();
   setTimeout(function(){ 
+    var username = localStorage.getItem("username");
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  

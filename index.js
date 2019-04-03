@@ -32,6 +32,7 @@ app.post("/main", function(req, res){
 app.post("/signin", function(req, res){
   var email = req.body.email;
   var password = req.body.password;
+  var username;
 
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
@@ -39,13 +40,12 @@ app.post("/signin", function(req, res){
   });
   client.connect();
   client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
-    localStorage.setItem("username", res.rows[0]);
+    username = res.rows[0];
     client.end();
   })
 
-  getfromdb();
+  getfromdb(username);
   setTimeout(function(){ 
-    var username = localStorage.getItem("username");
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
@@ -73,7 +73,7 @@ app.post("/writeworkout", function(req, res){
     client.end();
   });
 });
-function getfromdb(){
+function getfromdb(username){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,

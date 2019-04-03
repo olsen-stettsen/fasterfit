@@ -39,7 +39,7 @@ app.post("/signin", function(req, res){
   });
   client.connect();
   client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
-    localStorage.setItem("results", JSON.stringify(res.rows));
+    localStorage.setItem("username", res.rows[0]);
     client.end();
   })
 

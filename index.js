@@ -52,7 +52,6 @@ app.use(express.json());
 app.post("/writeworkout", function(req, res){
   console.log("req.body = " + JSON.stringify(req.body));
 
-
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,

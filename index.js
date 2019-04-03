@@ -49,10 +49,12 @@ app.post("/signin", function(req, res){
   client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
     localStorage.setItem("username", res.rows[0]);
     client.end();
-  })
-
-  var username = localStorage.getItem("username");
-  getfromdb(username);
+  });
+  var username;
+  setTimeout(function(){ 
+    username = localStorage.getItem("username");
+    getfromdb(username);
+  }, 1000);
   setTimeout(function(){ 
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);

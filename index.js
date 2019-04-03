@@ -72,21 +72,25 @@ function posttodb(username, email, password){
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
-  try{
+  
   client.connect();
+  client.query('SELECT user_name FROM account WHERE user_name = \'' + username + '\');', (err, res) => {
+    if(res.rows == username){
+      console.log("username already taken");
+    } else{
+      return;
+    }
+    client.end();
+  });
+
   client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\');', (err, res) => {
     var results = [];
     if (err) throw err;
-  
     for (let row of res.rows) {
       results.push(row);
     }
     client.end();
   });
-}
-catch{
-  console.log("username already taken");
-}
   localStorage.setItem('username', username);
 }
 app.use(express.static("public")); 

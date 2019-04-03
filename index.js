@@ -53,6 +53,7 @@ app.post("/signin", function(req, res){
   var username;
   setTimeout(function(){ 
     username = localStorage.getItem("username");
+    console.log("username in sign in: " + username);
     getfromdb(username);
   }, 1000);
   setTimeout(function(){ 

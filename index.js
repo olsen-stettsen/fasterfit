@@ -71,6 +71,7 @@ app.post("/writeworkout", function(req, res){
 });
 function getfromdb(){
   var username = localStorage.getItem("username");
+  console.log(username);
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,

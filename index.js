@@ -74,7 +74,7 @@ function posttodb(username, email, password){
   });
   
   client.connect();
-  client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\') WHERE NOT EXISTS (SELECT * FROM account WHERE user_name = \'' + username + '\');', (err, res) => {
+  client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\');', (err, res) => {
     var results = [];
     if (err) throw err;
     for (let row of res.rows) {

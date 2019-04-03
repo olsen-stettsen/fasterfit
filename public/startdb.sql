@@ -5,7 +5,7 @@ CREATE TABLE account (
     user_password   varchar(90)
 );
 CREATE TABLE exercise (
-    user_id         int         REFERENCES account(user_id),
-    exercise_name   varchar(90) NOT NULL,
-    one_rep_max     int         NOT NULL
+    user_id         int             REFERENCES account(user_id),
+    exercise_name   varchar(90)     NOT NULL,
+    sets_reps_json  varchar(250)    NOT NULL
 );

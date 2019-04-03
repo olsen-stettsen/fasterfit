@@ -32,7 +32,22 @@ app.post("/main", function(req, res){
 app.use(express.json());
 app.post("/writeworkout", function(req, res){
   console.log("req.body = " + JSON.stringify(req.body));
-  postworkouttodb();
+
+
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  
+  client.connect();
+  client.query('INSERT INTO exercise (user_id, exercise_name, sets_reps_json) VALUES ((SELECT user_id FROM account WHERE user_name = \'' + localStorage.getItem("username") + '\'),\'' + req.body.name + '\',\'' + JSON.stringify(req.body) + '\');', (err, res) => {
+    var results = [];
+    if (err) throw err;
+    for (let row of res.rows) {
+      results.push(row);
+    }
+    client.end();
+  });
 });
 function getfromdb(){
   const client = new Client({
@@ -67,17 +82,9 @@ function posttodb(username, email, password){
   });
   localStorage.setItem('username', username);
 }
-function postworkouttodb(){
-  console.log("posting to workout to db");
-}
-
 app.use(express.static("public")); 
 
 
 app.listen(process.env.PORT || 5000, function(){
     console.log('Server is running on port 5000');
 });
-function Thingy(){
-  this.one;
-  this.two;
-}

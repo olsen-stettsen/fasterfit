@@ -70,12 +70,13 @@ app.post("/writeworkout", function(req, res){
   });
 });
 function getfromdb(){
+  var username = localStorage.getItem("username");
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
   client.connect();
-  client.query('SELECT * FROM exercise;', (err, res) => {
+  client.query('SELECT * FROM exercise WHERE user_name = \'' + username + '\';', (err, res) => {
     console.log("getfromdb = " + JSON.stringify(res.rows));
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();

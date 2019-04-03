@@ -76,7 +76,7 @@ function getfromdb(){
     ssl: true,
   });
   client.connect();
-  client.query('SELECT * FROM exercise WHERE user_name = \'' + username + '\';', (err, res) => {
+  client.query('SELECT * FROM exercise;', (err, res) => {
     console.log("getfromdb = " + JSON.stringify(res.rows));
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();

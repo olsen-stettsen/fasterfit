@@ -44,7 +44,7 @@ app.post("/signin", function(req, res){
     var workoutdata = localStorage.getItem("results");
     console.log("workouts: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
-  }, 1000);
+  }, 2000);
 });
 
 

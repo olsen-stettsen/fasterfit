@@ -19,7 +19,11 @@ app.post("/main", function(req, res){
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
-  posttodb(username, email, password);
+  try{
+    posttodb(username, email, password);
+  } catch{
+    res.write("User name already taken. Please go back.")
+  }
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   getfromdb();

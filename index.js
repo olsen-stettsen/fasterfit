@@ -29,19 +29,24 @@ app.post("/main", function(req, res){
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });
+
+
 app.post("/signin", function(req, res){
   var email = req.body.email;
   var password = req.body.password;
-  posttodb(username, email, password);
-  console.log("Request for update");
-  console.log(username + " " + email + " " + password);
-  getfromdb();
+  console.log("Request for signin");
+  getusername(password, email);
   setTimeout(function(){ 
+    getfromdb();
+  }, 1000);
+  setTimeout(function(){ 
+    var username = localStorage.getItem("username");
     var workoutdata = localStorage.getItem("results");
-    //console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });
+
+
 app.use(express.json());
 app.post("/writeworkout", function(req, res){
   console.log("req.body = " + JSON.stringify(req.body));
@@ -74,6 +79,20 @@ function getfromdb(){
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })
+}
+function getusername(password, email){
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  
+  client.connect();
+  client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + ';', (err, res) => {
+    var results = [];
+    if (err) throw err;
+    localStorage.setItem("username", res.rows[0]);
+    client.end();
+  });
 }
 
 function posttodb(username, email, password){

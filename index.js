@@ -28,13 +28,14 @@ app.post("/main", function(req, res){
   var not = true;
   client.connect();
   client.query('SELECT user_name FROM account WHERE user_name = \'' + username + '\');', (err, res) => {
-    if(res.rows == username){
+    if(res.rows[0] == username){
       console.log("username already taken");
       not = false;
     }
     client.end();
   });
   if(not){
+    client.connect();
   client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\');', (err, res) => {
     var results = [];
     if (err) throw err;

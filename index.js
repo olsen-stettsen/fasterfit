@@ -19,11 +19,7 @@ app.post("/main", function(req, res){
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
-  try{
-    posttodb(username, email, password);
-  } catch{
-    res.sendFile(path.join(__dirname+'/home.html'));
-  }
+  posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   getfromdb();
@@ -45,10 +41,12 @@ app.post("/writeworkout", function(req, res){
   
   client.connect();
   var username = localStorage.getItem("username");
-  console.log("username" + username);
+  console.log("username: " + username);
   client.query('INSERT INTO exercise (user_id, exercise_name, sets_reps_json) VALUES ((SELECT user_id FROM account WHERE user_name = \'' + username + '\'),\'' + req.body.name + '\',\'' + JSON.stringify(req.body) + '\');', (err, res) => {
     var results = [];
-    if (err) throw err;
+    if (err){
+      console.log("Username already taken");
+    }
     for (let row of res.rows) {
       results.push(row);
     }

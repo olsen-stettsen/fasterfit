@@ -86,10 +86,10 @@ function getusername(password, email){
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
-  console.log('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + ';');
+  console.log('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';');
   
   client.connect();
-  client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + ';', (err, res) => {
+  client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
     if (err) throw err;
     console.log("res.row[0] = " + res.rows[0]);
     localStorage.setItem("username", res.rows[0]);

@@ -42,6 +42,7 @@ app.post("/signin", function(req, res){
   setTimeout(function(){ 
     var username = localStorage.getItem("username");
     var workoutdata = localStorage.getItem("results");
+    console.log("workouts: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });
@@ -78,7 +79,7 @@ function getfromdb(){
   });
   client.connect();
   client.query('SELECT * FROM exercise WHERE user_id = (SELECT user_id FROM account WHERE user_name = \'' + username + '\');', (err, res) => {
-    console.log("getfromdb = " + JSON.stringify(res.rows));
+    //console.log("getfromdb = " + JSON.stringify(res.rows));
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })

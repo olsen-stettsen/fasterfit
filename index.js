@@ -86,6 +86,7 @@ function getusername(password, email){
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
+  console.log('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + ';');
   
   client.connect();
   client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + ';', (err, res) => {

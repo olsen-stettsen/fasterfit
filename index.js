@@ -44,9 +44,6 @@ app.post("/writeworkout", function(req, res){
   console.log("username: " + username);
   client.query('INSERT INTO exercise (user_id, exercise_name, sets_reps_json) VALUES ((SELECT user_id FROM account WHERE user_name = \'' + username + '\'),\'' + req.body.name + '\',\'' + JSON.stringify(req.body) + '\');', (err, res) => {
     var results = [];
-    if (err){
-      console.log("Username already taken");
-    }
     for (let row of res.rows) {
       results.push(row);
     }

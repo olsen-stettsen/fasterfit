@@ -88,8 +88,8 @@ function getusername(password, email){
   
   client.connect();
   client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + ';', (err, res) => {
-    var results = [];
     if (err) throw err;
+    console.log("res.row[0] = " + res.rows[0]);
     localStorage.setItem("username", res.rows[0]);
     client.end();
   });

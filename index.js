@@ -41,7 +41,7 @@ app.post("/writeworkout", function(req, res){
   
   client.connect();
   var username = localStorage.getItem("username");
-  console.log("username: " + username);
+  console.log("username" + username);
   client.query('INSERT INTO exercise (user_id, exercise_name, sets_reps_json) VALUES ((SELECT user_id FROM account WHERE user_name = \'' + username + '\'),\'' + req.body.name + '\',\'' + JSON.stringify(req.body) + '\');', (err, res) => {
     var results = [];
     if (err) throw err;

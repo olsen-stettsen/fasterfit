@@ -9,16 +9,11 @@ const { Client } = require('pg');
 
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.set('view engine', 'ejs');
-/*****************************
- * root
- ****************************/
+
 app.get("/", function(req, res){
     console.log("Request for root");
     res.sendFile(path.join(__dirname+'/home.html'));
 });
-/*****************************
- * main
- ****************************/
 app.post("/main", function(req, res){
   //console.log(req);
   var username = req.body.username;
@@ -27,44 +22,26 @@ app.post("/main", function(req, res){
   posttodb(username, email, password);
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
-  getfromdb(username);
+  getfromdb();
   setTimeout(function(){ 
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });
-
-/*******************************
- * signin
- ******************************/
 app.post("/signin", function(req, res){
   var email = req.body.email;
   var password = req.body.password;
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });
-  client.connect();
-  client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
-    localStorage.setItem("username", res.rows[0]);
-    client.end();
-  });
-  var username;
-  setTimeout(function(){ 
-    username = localStorage.getItem("username");
-    console.log("username in sign in: " + username);
-    getfromdb(username);
-  }, 1000);
+  posttodb(username, email, password);
+  console.log("Request for update");
+  console.log(username + " " + email + " " + password);
+  getfromdb();
   setTimeout(function(){ 
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
     res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
   }, 1000);
 });
-/***********************************
- * writeworkout
- **********************************/
 app.use(express.json());
 app.post("/writeworkout", function(req, res){
   console.log("req.body = " + JSON.stringify(req.body));
@@ -87,23 +64,18 @@ app.post("/writeworkout", function(req, res){
     client.end();
   });
 });
-/****************************
- * getfromdb
- ***************************/
-function getfromdb(username){
+function getfromdb(){
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,
   });
   client.connect();
-  client.query('SELECT * FROM exercise WHERE user_name = \'' + username + '\';', (err, res) => {
+  client.query('SELECT * FROM exercise;', (err, res) => {
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })
 }
-/*****************************
- * posttodb
- ****************************/
+
 function posttodb(username, email, password){
   console.log("user name: " + username);
   console.log("email: " + email);

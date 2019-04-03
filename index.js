@@ -19,7 +19,38 @@ app.post("/main", function(req, res){
   var username = req.body.username;
   var email = req.body.email;
   var password = req.body.password;
-  posttodb(username, email, password);
+
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });
+  
+  var not = true;
+  client.connect();
+  client.query('SELECT user_name FROM account WHERE user_name = \'' + username + '\');', (err, res) => {
+    if(res.rows == username){
+      console.log("username already taken");
+      not = false;
+    }
+    client.end();
+  });
+  if(not){
+  client.connect();
+  client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\');', (err, res) => {
+    var results = [];
+    if (err) throw err;
+    for (let row of res.rows) {
+      results.push(row);
+    }
+    client.end();
+  });
+  }
+  localStorage.setItem('username', username);
+
+
+
+
+  
   console.log("Request for update");
   console.log(username + " " + email + " " + password);
   getfromdb();
@@ -61,37 +92,6 @@ function getfromdb(){
     localStorage.setItem("results", JSON.stringify(res.rows));
     client.end();
   })
-}
-
-function posttodb(username, email, password){
-  console.log("user name: " + username);
-  console.log("email: " + email);
-  console.log("password: " + password);
-  
-  const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });
-  
-  client.connect();
-  client.query('SELECT user_name FROM account WHERE user_name = \'' + username + '\');', (err, res) => {
-    if(res.rows == username){
-      console.log("username already taken");
-    } else{
-      return;
-    }
-    client.end();
-  });
-
-  client.query('INSERT INTO account (user_name, user_email, user_password) VALUES (\'' + username + '\',\'' + email + '\',\'' + password+ '\');', (err, res) => {
-    var results = [];
-    if (err) throw err;
-    for (let row of res.rows) {
-      results.push(row);
-    }
-    client.end();
-  });
-  localStorage.setItem('username', username);
 }
 app.use(express.static("public")); 
 

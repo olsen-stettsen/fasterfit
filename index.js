@@ -91,8 +91,8 @@ function getusername(password, email){
   client.connect();
   client.query('SELECT user_name FROM account WHERE user_email = \'' + email + '\' AND user_password = \'' + password + '\';', (err, res) => {
     if (err) throw err;
-    console.log("res.row[0] = " + JSON.stringify(res.rows[0]));
-    localStorage.setItem("username", JSON.stringify(res.rows[0]));
+    console.log("res.row[0] = " + JSON.stringify(res.rows[0].user_name));
+    localStorage.setItem("username", JSON.stringify(res.rows[0].user_name));
     client.end();
   });
 }

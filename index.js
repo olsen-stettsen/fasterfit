@@ -81,6 +81,7 @@ function getfromdb(){
   })
 }
 function getusername(password, email){
+  console.log("getusername funtion called");
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true,

@@ -91,6 +91,7 @@ function enterexercise(){
     exercise.hour = d.getHours();
     exercise.minutes = d.getMinutes();
     postexercise(JSON.stringify(exercise));
+    cancelexercise();
 }
 function postexercise(exercise){
     var xmlhttp = new XMLHttpRequest();
@@ -123,3 +124,4 @@ function Exercise(){
 function Workouts(){
     this.exercise = [];
 }
+//

@@ -22,7 +22,7 @@ app.post("/main", function(req, res){
   try{
     posttodb(username, email, password);
   } catch{
-    res.write("User name already taken. Please go back.")
+    res.sendFile(path.join(__dirname+'/home.html'));
   }
   console.log("Request for update");
   console.log(username + " " + email + " " + password);

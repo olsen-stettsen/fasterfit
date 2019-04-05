@@ -108,7 +108,7 @@ function postexercise(exercise){
     xmlhttp.open("POST", "/writeworkout", true);
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            alert(this.responseText)
+            //alert(this.responseText)
         }
     };
     xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -123,7 +123,7 @@ function workoutdataonthisday(day, month){
     for (var count = 0; count < workouts.length; count++){
         if(JSON.parse(workouts[count].sets_reps_json).month == month
         && JSON.parse(workouts[count].sets_reps_json).day == day){
-            alert(JSON.parse(workouts[count].sets_reps_json).day);
+            //alert(JSON.parse(workouts[count].sets_reps_json).day);
             thereis = true;
         }
     }

@@ -7,7 +7,6 @@ function onload(){
     setCalander(date);
     // Page interactions
     listen();
-    getdbfromhtml();
 }
 /***********************************
  * Calander
@@ -16,6 +15,7 @@ function setCalander(date){
     // set month header
     document.getElementById("headermonth").innerHTML = getMonthstring(date.getMonth());
     document.getElementById("headeryear").innerHTML = date.getFullYear();
+    
     // populate cal
     var table = document.getElementById("caltable");
     var wPos = 0;
@@ -26,6 +26,9 @@ function setCalander(date){
             var row = table.insertRow();
         }
         var cell = row.insertCell(); 
+        if (workoutdataonthisday(dPos, date.getMonth())){
+            cell.style.background = "green";
+        }
         
         if(dPos > firstday){
                  
@@ -110,12 +113,20 @@ function postexercise(exercise){
     xmlhttp.send(exercise);
 
 }
-function getdbfromhtml(){
+function workoutdataonthisday(day, month){
+    var thereis = false;
     var workoutdata = document.getElementById("workoutdata").innerHTML;
-    alert(workoutdata);
+    //alert(workoutdata);
     var workouts = JSON.parse(workoutdata);
-    alert(workouts[0].sets_reps_json);
-    alert(workouts[0].exercise_name);
+    for (var count = 0; count < workouts.length; count++){
+        /*if(JSON.parse(workoutdata[count].sets_reps_json).month == month
+        && JSON.parse(workoutdata[count].sets_reps_json).day == day){
+            thereis = true;
+        }
+    }*/
+    alert(JSON.parse(workoutdata[count].sets_reps_json).month);
+    alert(JSON.parse(workoutdata[count].sets_reps_json).day);
+    return thereis;
 }
 /****************************************
  * Objects

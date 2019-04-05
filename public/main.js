@@ -74,7 +74,6 @@ function cancelexercise(){
 }
 function addset(){
     var setfield = document.getElementById("sets");
-    //setfield.innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
     var x = document.createElement("INPUT");
     var y = document.createElement("BR"); 
     x.setAttribute("type", "number");
@@ -112,7 +111,7 @@ function postexercise(exercise){
 
 }
 function getdbfromhtml(){
-    //alert(document.getElementById("workoutdata").innerHTML);
+    alert(document.getElementById("workoutdata").innerHTML);
 }
 /****************************************
  * Objects

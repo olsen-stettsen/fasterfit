@@ -117,13 +117,13 @@ function workoutdataonthisday(day, month){
     var thereis = false;
     var workoutdata = document.getElementById("workoutdata").innerHTML;
     //alert(workoutdata);
-    var workouts = JSON.parse(workoutdata);
+    var workouts = JSON.parse(workoutdata);/*
     for (var count = 0; count < workouts.length; count++){
-        /*if(JSON.parse(workoutdata[count].sets_reps_json).month == month
+        if(JSON.parse(workoutdata[count].sets_reps_json).month == month
         && JSON.parse(workoutdata[count].sets_reps_json).day == day){
             thereis = true;
-        }*/
-    }
+        }
+    }*/
     alert(JSON.parse(workoutdata[count].sets_reps_json).month);
     alert(JSON.parse(workoutdata[count].sets_reps_json).day);
     return thereis;

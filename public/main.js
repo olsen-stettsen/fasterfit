@@ -27,8 +27,7 @@ function setCalander(date){
         }
         var cell = row.insertCell(); 
         if (workoutdataonthisday(dPos, date.getMonth() + 1)){
-            //cell.style.background = "green";
-            alert("found one");
+            cell.style.background = "green";
         }
         
         if(dPos > firstday){

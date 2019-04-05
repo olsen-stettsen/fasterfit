@@ -115,7 +115,7 @@ function getdbfromhtml(){
     alert(workoutdata);
     var workouts = JSON.parse(workoutdata);
     alert(workouts[0].sets_reps_json);
-    alert(workouts[0].name);
+    alert(workouts[0].exercise_name);
 }
 /****************************************
  * Objects

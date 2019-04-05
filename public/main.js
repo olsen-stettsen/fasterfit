@@ -30,7 +30,7 @@ function setCalander(date){
         if(dPos > firstday){
             var numy = dPos - firstday;
             if (workoutdataonthisday(dPos - 1, date.getMonth() + 1)){
-                cell.innerHTML = "<button class='calbtn hasdata'>" + numy + "</button>";
+                cell.innerHTML = "<button onclick='calbtn(this)' class='calbtn hasdata'>" + numy + "</button>";
             }
             else{
                 cell.innerHTML = "<button class='calbtn'>" + numy + "</button>";
@@ -130,6 +130,9 @@ function workoutdataonthisday(day, month){
     //alert(JSON.parse(workouts[0].sets_reps_json).month);
     //alert(JSON.parse(workouts[0].sets_reps_json).day);
     return thereis;
+}
+function calbtn(e){
+    alert("i have data");
 }
 /****************************************
  * Objects

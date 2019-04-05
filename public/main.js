@@ -124,8 +124,8 @@ function workoutdataonthisday(day, month){
             thereis = true;
         }
     }*/
-    alert(JSON.parse(workouts[0].sets_reps_json));
-    alert(JSON.parse(workouts[0].sets_reps_json));
+    alert(JSON.parse(workouts[0].sets_reps_json).month);
+    alert(JSON.parse(workouts[0].sets_reps_json).day);
     return thereis;
 }
 /****************************************

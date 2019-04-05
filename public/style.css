@@ -10,3 +10,6 @@
 #workoutdata{
     display: none;
 }
+.hasdata{
+    background: green;
+}

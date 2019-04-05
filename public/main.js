@@ -27,7 +27,8 @@ function setCalander(date){
         }
         var cell = row.insertCell();         
         if(dPos > firstday){
-            cell.innerHTML = "<button class='calbtn'>" + dPos - firstday + "</button>"     
+            var numy = dPos - firstday;
+            cell.innerHTML = "<button class='calbtn'>" + numy + "</button>"     
         }
         if (workoutdataonthisday(dPos - 1, date.getMonth() + 1)){
             cell.style.background = "green";

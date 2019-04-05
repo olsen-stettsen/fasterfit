@@ -1,6 +1,3 @@
-body{
-    text-align: center;
-}
 #monthback{
 }
 #headermonth{
@@ -30,4 +27,5 @@ body{
 }
 #bodywrapper{
     width: 85%;
+    margin-left: 7.5%
 }

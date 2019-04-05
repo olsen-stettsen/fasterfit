@@ -27,6 +27,7 @@ function setCalander(date){
         }
         var cell = row.insertCell(); 
         if (workoutdataonthisday(dPos, date.getMonth() + 1)){
+            alert("dpos: " + dPos);
             cell.style.background = "green";
         }
         

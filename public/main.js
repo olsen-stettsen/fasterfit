@@ -64,7 +64,7 @@ function toggleaddworkoutvis(){
     else{
         document.getElementById("wOenter").style.display = "block";
         if (document.getElementById("sets").children.length == 0){
-            document.getElementById("sets").innerHTML = "# of Reps: <input type='text' placeholder='reps'></input>";
+            document.getElementById("sets").innerHTML = "<input type='text' placeholder='reps'></input>";
         }
     }    
 }
@@ -76,7 +76,8 @@ function addset(){
     var setfield = document.getElementById("sets");
     //setfield.innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
     var x = document.createElement("INPUT");
-    x.setAttribute("type", "text");
+    x.setAttribute("type", "number");
+    x.setAttribute("placeholder", "Reps")
     setfield.appendChild(x);
 }
 function enterexercise(){

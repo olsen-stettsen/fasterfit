@@ -30,7 +30,7 @@ function setCalander(date){
                  
             cell.innerHTML = dPos - firstday +"";      
         }
-        if (workoutdataonthisday(dPos, date.getMonth() + 1)){
+        if (workoutdataonthisday(dPos - 1, date.getMonth() + 1)){
             cell.style.background = "green";
         }
         wPos++;

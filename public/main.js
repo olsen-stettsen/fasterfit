@@ -36,7 +36,7 @@ function setCalander(date){
                 cell.innerHTML = "<button onclick='calbtn(this)' class='calbtn hasdata'>" + numy + "</button>";
             }
             else{
-                cell.innerHTML = "<button class='calbtn'>" + numy + "</button>";
+                cell.innerHTML = "<button onclick='calbtn(this)' class='calbtn'>" + numy + "</button>";
             }
         }
         wPos++;
@@ -135,7 +135,9 @@ function workoutdataonthisday(day, month){
     return thereis;
 }
 function calbtn(e){
-    alert(e.innerHTML);
+    var day = e.innerHTML;
+    var month = localStorage.getItem("month");
+    alert("day : " + day + " Month: " + month);
 }
 /****************************************
  * Objects

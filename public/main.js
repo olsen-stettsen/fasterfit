@@ -27,7 +27,7 @@ function setCalander(date){
         }
         var cell = row.insertCell(); 
         if (workoutdataonthisday(dPos, date.getMonth())){
-            //cell.style.background = "green";
+            cell.style.background = "green";
         }
         
         if(dPos > firstday){
@@ -117,15 +117,15 @@ function workoutdataonthisday(day, month){
     var thereis = false;
     var workoutdata = document.getElementById("workoutdata").innerHTML;
     //alert(workoutdata);
-    var workouts = JSON.parse(workoutdata);/*
+    var workouts = JSON.parse(workoutdata);
     for (var count = 0; count < workouts.length; count++){
-        if(JSON.parse(workoutdata[count].sets_reps_json).month == month
-        && JSON.parse(workoutdata[count].sets_reps_json).day == day){
+        if(JSON.parse(workouts[count].sets_reps_json).month == month
+        && JSON.parse(workouts[count].sets_reps_json).day == day){
             thereis = true;
         }
-    }*/
-    alert(JSON.parse(workouts[0].sets_reps_json).month);
-    alert(JSON.parse(workouts[0].sets_reps_json).day);
+    }
+    //alert(JSON.parse(workouts[0].sets_reps_json).month);
+    //alert(JSON.parse(workouts[0].sets_reps_json).day);
     return thereis;
 }
 /****************************************

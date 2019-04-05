@@ -15,6 +15,9 @@ function setCalander(date){
     // set month header
     document.getElementById("headermonth").innerHTML = getMonthstring(date.getMonth());
     document.getElementById("headeryear").innerHTML = date.getFullYear();
+
+    //set month for WO data
+    localStorage.setItem("month", date.getMonth() + 1);
     
     // populate cal
     var table = document.getElementById("caltable");
@@ -132,7 +135,7 @@ function workoutdataonthisday(day, month){
     return thereis;
 }
 function calbtn(e){
-    alert("i have data");
+    alert(e.innerHTML);
 }
 /****************************************
  * Objects

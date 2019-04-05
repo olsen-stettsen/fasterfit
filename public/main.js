@@ -111,7 +111,9 @@ function postexercise(exercise){
 
 }
 function getdbfromhtml(){
-    alert(document.getElementById("workoutdata").innerHTML);
+    var workoutdata = document.getElementById("workoutdata").innerHTML;
+    var workouts = JSON.parse(workoutdata);
+    alert(workouts.sets_reps_json);
 }
 /****************************************
  * Objects

@@ -25,15 +25,13 @@ function setCalander(date){
         if(wPos == 0){
             var row = table.insertRow();
         }
-        var cell = row.insertCell(); 
-        if (workoutdataonthisday(dPos, date.getMonth() + 1)){
-            alert("dpos: " + dPos);
-            cell.style.background = "green";
-        }
-        
+        var cell = row.insertCell();         
         if(dPos > firstday){
                  
             cell.innerHTML = dPos - firstday +"";      
+        }
+        if (workoutdataonthisday(dPos, date.getMonth() + 1)){
+            cell.style.background = "green";
         }
         wPos++;
         if(wPos == 7){

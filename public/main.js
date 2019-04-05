@@ -26,9 +26,9 @@ function setCalander(date){
             var row = table.insertRow();
         }
         var cell = row.insertCell(); 
-        if (workoutdataonthisday(dPos, date.getMonth())){
+       /* if (workoutdataonthisday(dPos, date.getMonth())){
             //cell.style.background = "green";
-        }
+        }*/
         
         if(dPos > firstday){
                  

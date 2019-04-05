@@ -121,6 +121,7 @@ function workoutdataonthisday(day, month){
     for (var count = 0; count < workouts.length; count++){
         if(JSON.parse(workouts[count].sets_reps_json).month == month
         && JSON.parse(workouts[count].sets_reps_json).day == day){
+            alert(JSON.parse(workouts[count].sets_reps_json).day);
             thereis = true;
         }
     }

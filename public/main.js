@@ -73,8 +73,11 @@ function cancelexercise(){
     toggleaddworkoutvis();
 }
 function addset(){
-    document.getElementById("sets").innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
-    //alert(document.getElementById("sets").children.length);
+    var setfield = document.getElementById("sets");
+    //setfield.innerHTML += "<br># of Reps: <input type='text' placeholder='reps'></input>";
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "text");
+    setfield.appendChild(x);
 }
 function enterexercise(){
     var d = new Date();

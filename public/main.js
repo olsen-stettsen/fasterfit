@@ -25,7 +25,8 @@ function setCalander(date){
         if(wPos == 0){
             var row = table.insertRow();
         }
-        var cell = row.insertCell();         
+        var cell = row.insertCell();    
+        cell.setAttribute("class", "calcell");     
         if(dPos > firstday){
             var numy = dPos - firstday;
             if (workoutdataonthisday(dPos - 1, date.getMonth() + 1)){

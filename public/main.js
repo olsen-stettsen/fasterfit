@@ -137,7 +137,15 @@ function workoutdataonthisday(day, month){
 function calbtn(e){
     var day = e.innerHTML;
     var month = localStorage.getItem("month");
-    alert("day : " + day + " Month: " + month);
+    var workouts = JSON.parse(document.getElementById("workoutdata").innerHTML);
+    var workoutsection = document.getElementById("dayworkouts");
+    var wDisplay = "";
+    for (var count = 0; count < workouts.length; count++){
+        if(JSON.parse(workouts[count].sets_reps_json).month == month
+        && JSON.parse(workouts[count].sets_reps_json).day == day){
+            wDisplay += workouts[count].sets_reps_json;
+        }
+    }    
 }
 /****************************************
  * Objects

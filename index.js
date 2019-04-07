@@ -24,9 +24,10 @@ app.post("/main", function(req, res){
   console.log(username + " " + email + " " + password);
   getfromdb();
   setTimeout(function(){ 
+    var recs = make_recs();
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
-    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: make_recs()});  
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: recs});  
   }, 1000);
 });
 
@@ -40,10 +41,11 @@ app.post("/signin", function(req, res){
     getfromdb();
   }, 1000);
   setTimeout(function(){ 
+    var recs = make_recs();
     var username = localStorage.getItem("username");
     var workoutdata = localStorage.getItem("results");
     console.log("workouts: " + workoutdata);
-    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: make_recs()});  
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: recs});  
   }, 2000);
 });
 

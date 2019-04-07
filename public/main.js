@@ -69,8 +69,9 @@ function listen(){
 }
 function monthback(){
     var date = new Date(JSON.parse(localStorage.getItem("date")));
-    alert(JSON.stringify(date));
-    //setCalander(date);
+    //alert(JSON.stringify(date));
+    date.setMonth(date.getMonth() - 3);
+    setCalander(date);
 }
 function toggleaddworkoutvis(){
     if(document.getElementById("wOenter").style.display == "block"){

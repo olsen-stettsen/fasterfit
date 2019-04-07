@@ -126,28 +126,26 @@ function posttodb(username, email, password){
 /***********************
  * Make recomendations
  **********************/
-function make_recs(){
+function make_recs() {
   var workouts = JSON.parse(localStorage.getItem("results"));
-  var month = new Date().getMonth();/*
   var mostrecent = {};
   for (var count = 0; count < workouts.length; count++) {
-    if (JSON.parse(workouts[count].sets_reps_json).month >= month - 3) {
-      var wd = JSON.parse(workouts[count].sets_reps_json);
-      var found = false;
-      for (var u = 0; u < mostrecent.length; u++) {
-        if (wd.name == mostrecent[u].name) {
-          mostrecent[u].sets = wd.sets;
-          found = true;
-        }
-      }
-      if (!found) {
-        mostrecent[mostrecent.length].name = wd.name;
-        mostrecent[mostrecent.length].sets = wd.sets;
+    var wd = JSON.parse(workouts[count].sets_reps_json);
+    var found = false;
+    for (var u = 0; u < mostrecent.length; u++) {
+      if (wd.name == mostrecent[u].name) {
+        mostrecent[u].sets = wd.sets;
+        found = true;
       }
     }
+    if (!found) {
+      var wO = new Workout();
+      wO.name = wd.name;
+      wO.sets = wd.sets;
+      mostrecent[mostrecent.length] = wO;
+    }
   }
-  return JSON.stringify(mostrecent);*/
-  return month;
+  return JSON.stringify(mostrecent);
 }
 function Workout(){
   this.name;

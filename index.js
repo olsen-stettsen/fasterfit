@@ -129,6 +129,10 @@ function posttodb(username, email, password){
 function make_recs(){
   return "steve";
 }
+function Workout(){
+  this.name;
+  this.sets = {};
+  }
 app.use(express.static("public")); 
 
 

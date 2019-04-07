@@ -133,14 +133,14 @@ function make_recs() {
     var wd = JSON.parse(workouts[count].sets_reps_json);
     var found = false;
     for (var u = 0; u < mostrecent.length; u++) {
-      if (wd.name == mostrecent[u].name) {
+      if (wd.name.toUpperCase() == mostrecent[u].name.toUpperCase()) {
         mostrecent[u].sets = wd.sets;
         found = true;
       }
     }
     if (!found) {
       var wO = new Workout();
-      wO.name = wd.name;
+      wO.name = wd.name.toUpperCase();;
       wO.sets = wd.sets;
       mostrecent[mostrecent.length] = wO;
     }

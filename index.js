@@ -127,8 +127,8 @@ function posttodb(username, email, password){
  * Make recomendations
  **********************/
 function make_recs(){
-  var workouts = JSON.parse(localStorage.getItem("results"));/*
-  var month = new Date().getMonth();
+  var workouts = JSON.parse(localStorage.getItem("results"));
+  var month = new Date().getMonth();/*
   var mostrecent = {};
   for (var count = 0; count < workouts.length; count++) {
     if (JSON.parse(workouts[count].sets_reps_json).month >= month - 3) {
@@ -147,7 +147,7 @@ function make_recs(){
     }
   }
   return JSON.stringify(mostrecent);*/
-  return JSON.stringify(workouts);
+  return month;
 }
 function Workout(){
   this.name;

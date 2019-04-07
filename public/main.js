@@ -147,14 +147,7 @@ function calbtn(e){
     for (var count = 0; count < workouts.length; count++){
         if(JSON.parse(workouts[count].sets_reps_json).month == month
         && JSON.parse(workouts[count].sets_reps_json).day == day){
-            //wDisplay += workouts[count].sets_reps_json + "<br>";
-            var wd = JSON.parse(workouts[count].sets_reps_json);
-            wDisplay += wd.name + "<br>";
-            var setz = JSON.parse(wd.sets);
-            for(var i = 0; i < setz.length; i++){
-                wDisplay += setz[i] + "<br>";
-            }
-
+            wDisplay += workouts[count].sets_reps_json + "<br>";
         }
     }  
     workoutsection.innerHTML = wDisplay;

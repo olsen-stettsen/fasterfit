@@ -25,12 +25,10 @@
 #datadiplay{
     float: right;
     width: 50%;
-    background-color: red;
 }
 #datadisplay2{
     float: left;
     width: 50%;
-    background-color: blueviolet;
 }
 #bodywrapper{
     width: 85%;

@@ -126,19 +126,18 @@ function postexercise(exercise){
 function workoutdataonthisday(day, month){
     var thereis = false;
     var workoutdata = document.getElementById("workoutdata").innerHTML;
-    //alert(workoutdata);
     var workouts = JSON.parse(workoutdata);
     for (var count = 0; count < workouts.length; count++){
         if(JSON.parse(workouts[count].sets_reps_json).month == month
         && JSON.parse(workouts[count].sets_reps_json).day == day){
-            //alert(JSON.parse(workouts[count].sets_reps_json).day);
             thereis = true;
         }
     }
-    //alert(JSON.parse(workouts[0].sets_reps_json).month);
-    //alert(JSON.parse(workouts[0].sets_reps_json).day);
     return thereis;
 }
+/*****************************
+ * Set the Workout data field
+ ****************************/
 function calbtn(e){
     var day = e.innerHTML;
     var month = localStorage.getItem("month");
@@ -148,7 +147,14 @@ function calbtn(e){
     for (var count = 0; count < workouts.length; count++){
         if(JSON.parse(workouts[count].sets_reps_json).month == month
         && JSON.parse(workouts[count].sets_reps_json).day == day){
-            wDisplay += workouts[count].sets_reps_json + "<br>";
+            //wDisplay += workouts[count].sets_reps_json + "<br>";
+            var wd = JSON.parse(workouts[count].sets_reps_json);
+            wDisplay += wd.name + "<br>";
+            var setz = JSON.parse(wd.sets);
+            for(var i = 0; i < setz.length; i++){
+                wDisplay += setz[i] + "<br>";
+            }
+
         }
     }  
     workoutsection.innerHTML = wDisplay;

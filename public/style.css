@@ -29,6 +29,7 @@
 }
 #datadisplay2{
     float: left;
+    width: 50%;
     background-color: blueviolet;
 }
 #bodywrapper{

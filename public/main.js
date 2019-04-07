@@ -68,7 +68,7 @@ function listen(){
     document.getElementById("monthback").addEventListener("click", monthback);
 }
 function monthback(){
-    var date = new Date(localStorage.getItem("date"));
+    var date = new Date(JSON.parse(localStorage.getItem("date")));
     alert(JSON.stringify(date));
     //setCalander(date);
 }

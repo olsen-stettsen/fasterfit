@@ -18,6 +18,7 @@ function setCalander(date){
 
     //set month for WO data
     localStorage.setItem("month", date.getMonth() + 1);
+    localStorage.setItem("date", JSON.stringify(date));
     
     // populate cal
     var table = document.getElementById("caltable");
@@ -64,6 +65,12 @@ function listen(){
     document.getElementById("wOback").addEventListener("click", toggleaddworkoutvis);
     document.getElementById("wOcancel").addEventListener("click", cancelexercise);
     document.getElementById("submitexercise").addEventListener("click", enterexercise);
+    document.getElementById("monthback").addEventListener("click", monthback);
+}
+function monthback(){
+    var date = new Date(localStorage.getItem("date"));
+    alert(JSON.stringify(date));
+    //setCalander(date);
 }
 function toggleaddworkoutvis(){
     if(document.getElementById("wOenter").style.display == "block"){

@@ -90,6 +90,7 @@ function addset(){
     w.setAttribute("placeholder", "Weight");
     x.setAttribute("placeholder", "Reps");
     setfield.appendChild(y);
+    setfield.appendChild(w);
     setfield.appendChild(x);
 }
 function enterexercise(){

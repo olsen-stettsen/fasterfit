@@ -12,6 +12,14 @@
   <h2 id="welcometag">Welcome <%= username %> </h2>
   <form action="" method="get"></form>
   <button id="mainnav1" class="mainnav">Add workout</button>
+  <div id="wOenter">
+      <input type="text" placeholder="Exercise" id="exercisename">
+      <div id="sets"></div>
+      <button id="addset" class="wObtn">Add Set</button>
+      <button id="wOback" class="wObtn">Back</button>
+      <button id="wOcancel" class="wObtn">Cancel</button>
+      <button id="submitexercise" class="wObtn">Enter</button>
+    </div>
   <div id="calander">
       <div id="datadiplay">
         <div id="datadisplay2">
@@ -28,15 +36,6 @@
     <div id="calfields">
       <table id="caltable"></table>
     </div>
-  </div>
-
-  <div id="wOenter">
-    <input type="text" placeholder="Exercise" id="exercisename">
-    <div id="sets"></div>
-    <button id="addset" class="wObtn">Add Set</button>
-    <button id="wOback" class="wObtn">Back</button>
-    <button id="wOcancel" class="wObtn">Cancel</button>
-    <button id="submitexercise" class="wObtn">Enter</button>
   </div>
 </div>
   <p id="workoutdata"> <%= results %></p>

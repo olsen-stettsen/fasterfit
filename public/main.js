@@ -22,6 +22,7 @@ function setCalander(date){
     
     // populate cal
     var table = document.getElementById("caltable");
+    table.innerHTML = "";
     var wPos = 0;
     var firstday = getFirstDayOfTheMonth(date.getFullYear(), date.getMonth());
     var daysinmonth = getNumberofDaysInTheMonth(date.getFullYear(), date.getMonth())

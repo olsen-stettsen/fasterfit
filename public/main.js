@@ -72,7 +72,7 @@ function toggleaddworkoutvis(){
     else{
         document.getElementById("wOenter").style.display = "block";
         if (document.getElementById("sets").children.length == 0){
-            document.getElementById("sets").innerHTML = "<input type='number' placeholder='reps'></input>";
+            document.getElementById("sets").innerHTML = "<input type='number' placeholder='weight'></input><input type='number' placeholder='reps'></input>";
         }
     }    
 }
@@ -94,8 +94,9 @@ function enterexercise(){
     var exercise = new Exercise();
     exercise.name = document.getElementById("exercisename").value;
     var setsposition = 0;
-    for (var pos = 0; pos < document.getElementById("sets").children.length; pos += 2){
-        exercise.sets[setsposition] = document.getElementById("sets").children[pos].value;
+    for (var pos = 0; pos < document.getElementById("sets").children.length; pos += 3){
+        var pair = document.getElementById("sets").children[pos].value + "," + document.getElementById("sets").children[pos + 1].value
+        exercise.sets[setsposition] = pair;
         setsposition++;
     }
     exercise.year = d.getFullYear();

@@ -23,9 +23,10 @@
     width: 50pt;
 }
 #datadiplay{
+    /*
     position: absolute;
     right: 40px;
-    top: 40px;
+    top: 40px;*/
 }
 #bodywrapper{
     width: 85%;

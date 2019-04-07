@@ -66,11 +66,18 @@ function listen(){
     document.getElementById("wOcancel").addEventListener("click", cancelexercise);
     document.getElementById("submitexercise").addEventListener("click", enterexercise);
     document.getElementById("monthback").addEventListener("click", monthback);
+    document.getElementById("monthforward").addEventListener("click", monthforward);
 }
 function monthback(){
     var date = new Date(JSON.parse(localStorage.getItem("date")));
     //alert(JSON.stringify(date));
     date.setMonth(date.getMonth() - 1);
+    setCalander(date);
+}
+function monthforward(){
+    var date = new Date(JSON.parse(localStorage.getItem("date")));
+    //alert(JSON.stringify(date));
+    date.setMonth(date.getMonth() + 1);
     setCalander(date);
 }
 function toggleaddworkoutvis(){

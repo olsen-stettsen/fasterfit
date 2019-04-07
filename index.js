@@ -20,13 +20,13 @@ app.post("/main", function(req, res){
   var email = req.body.email;
   var password = req.body.password;
   posttodb(username, email, password);
-  console.log("Request for update");
+  console.log("Request for main");
   console.log(username + " " + email + " " + password);
   getfromdb();
   setTimeout(function(){ 
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
-    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata});  
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: make_recs()});  
   }, 1000);
 });
 
@@ -121,9 +121,39 @@ function posttodb(username, email, password){
   });
   localStorage.setItem('username', username);
 }
+/***********************
+ * Make recomendations
+ **********************/
+function make_recs(){
+  var workouts = JSON.parse(localStorage.getItem("results"));
+  var month = new Date().getMonth();
+  var mostrecent = {};
+  for (var count = 0; count < workouts.length; count++){
+    if(JSON.parse(workouts[count].sets_reps_json).month >= month - 3){
+        var wd = JSON.parse(workouts[count].sets_reps_json);
+        var found = false;
+        for(var u = 0; u < mostrecent.length; u++){
+          if(wd.name == mostrecent[u].name){
+            mostrecent[u].sets = wd.sets;
+            found = true;
+          }
+        }
+        if (!found){
+          mostrecent[mostrecent.length].name = wd.name;
+          mostrecent[mostrecent.length].sets = wd.sets;
+        }
+    }
+    return JSON.stringify(mostrecent);
+}  
+
+}
 app.use(express.static("public")); 
 
 
 app.listen(process.env.PORT || 5000, function(){
     console.log('Server is running on port 5000');
 });
+function Workout(){
+  this.name;
+  this.sets;
+}

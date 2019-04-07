@@ -24,6 +24,8 @@
 }
 #datadiplay{
     float: right;
+    width: 50%;
+    background-color: red;
 }
 #datadisplay2{
     float: left;

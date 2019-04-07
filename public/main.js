@@ -148,6 +148,13 @@ function calbtn(e){
         if(JSON.parse(workouts[count].sets_reps_json).month == month
         && JSON.parse(workouts[count].sets_reps_json).day == day){
             wDisplay += workouts[count].sets_reps_json + "<br>";
+            var wd = JSON.parse(workouts[count].sets_reps_json);
+            wDisplay += wd.name + "<br>";
+            var setz = JSON.parse(wd.sets);
+            for(var i = 0; i < setz.length; i++){
+                wDisplay += setz[i] + "<br>";
+            }
+
         }
     }  
     workoutsection.innerHTML = wDisplay;

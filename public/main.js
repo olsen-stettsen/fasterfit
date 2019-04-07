@@ -150,10 +150,10 @@ function calbtn(e){
             wDisplay += workouts[count].sets_reps_json + "<br>";
             var wd = JSON.parse(workouts[count].sets_reps_json);
             wDisplay += wd.name + "<br>";
-            var setz = JSON.parse(wd.sets);
+            var setz = JSON.parse(wd.sets);/*
             for(var i = 0; i < setz.length; i++){
                 wDisplay += setz[i] + "<br>";
-            }
+            }*/
 
         }
     }  

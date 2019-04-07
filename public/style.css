@@ -25,6 +25,9 @@
 #datadiplay{
     float: right;
 }
+#datadisplay2{
+    float: left;
+}
 #bodywrapper{
     width: 85%;
     margin-left: 7.5%

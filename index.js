@@ -24,10 +24,9 @@ app.post("/main", function(req, res){
   console.log(username + " " + email + " " + password);
   getfromdb();
   setTimeout(function(){ 
-    var recs = make_recs();
     var workoutdata = localStorage.getItem("results");
     //console.log("workoutdata: " + workoutdata);
-    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: recs});  
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: make_recs()});  
   }, 1000);
 });
 
@@ -41,11 +40,10 @@ app.post("/signin", function(req, res){
     getfromdb();
   }, 1000);
   setTimeout(function(){ 
-    var recs = make_recs();
     var username = localStorage.getItem("username");
     var workoutdata = localStorage.getItem("results");
     console.log("workouts: " + workoutdata);
-    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: recs});  
+    res.render(path.join(__dirname+'/public/main.ejs'), {username: username, email: email, password: password, results: workoutdata, recs: make_recs()});  
   }, 2000);
 });
 
@@ -126,29 +124,27 @@ function posttodb(username, email, password){
 /***********************
  * Make recomendations
  **********************/
-function make_recs(){
-  /*var workouts = JSON.parse(localStorage.getItem("results"));
+function make_recs() {
+  var workouts = JSON.parse(localStorage.getItem("results"));
   var month = new Date().getMonth();
   var mostrecent = {};
-  for (var count = 0; count < workouts.length; count++){
-    if(JSON.parse(workouts[count].sets_reps_json).month >= month - 3){
-        var wd = JSON.parse(workouts[count].sets_reps_json);
-        var found = false;
-        for(var u = 0; u < mostrecent.length; u++){
-          if(wd.name == mostrecent[u].name){
-            mostrecent[u].sets = wd.sets;
-            found = true;
-          }
+  for (var count = 0; count < workouts.length; count++) {
+    if (JSON.parse(workouts[count].sets_reps_json).month >= month - 3) {
+      var wd = JSON.parse(workouts[count].sets_reps_json);
+      var found = false;
+      for (var u = 0; u < mostrecent.length; u++) {
+        if (wd.name == mostrecent[u].name) {
+          mostrecent[u].sets = wd.sets;
+          found = true;
         }
-        if (!found){
-          mostrecent[mostrecent.length].name = wd.name;
-          mostrecent[mostrecent.length].sets = wd.sets;
-        }
+      }
+      if (!found) {
+        mostrecent[mostrecent.length].name = wd.name;
+        mostrecent[mostrecent.length].sets = wd.sets;
+      }
     }
-    return JSON.stringify(mostrecent);*/
-    return "Howdy";
-}  
-
+  }
+  return JSON.stringify(mostrecent);
 }
 app.use(express.static("public")); 
 

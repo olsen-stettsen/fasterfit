@@ -152,7 +152,8 @@ function calbtn(e){
             wDisplay += wd.name + "<br>";
             var setz = wd.sets;
             for(var i = 0; i < setz.length; i++){
-                wDisplay += setz[i] + "<br>";
+                var weightz = setz[i].split(",");
+                wDisplay += "Weight: " + weightz[0] + " Reps: " + weightz[1] + "<br>";
             }
 
         }

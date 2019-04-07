@@ -27,6 +27,7 @@
 }
 #datadisplay2{
     float: left;
+    background-color: red;
 }
 #bodywrapper{
     width: 85%;

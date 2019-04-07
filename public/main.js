@@ -137,7 +137,7 @@ function postexercise(exercise){
     };
     xmlhttp.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
     xmlhttp.send(exercise);
-    location.reload();
+    setCalander(new Date);
 }
 function workoutdataonthisday(day, month){
     var thereis = false;

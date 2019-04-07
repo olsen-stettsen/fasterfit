@@ -32,10 +32,10 @@
     width: 50%;
     background-color: blueviolet;
 }
+#datadisplay3{
+    width: 100%;
+}
 #bodywrapper{
     width: 85%;
     margin-left: 7.5%
-}
-#dayworkouts{
-    width: 50%;
 }

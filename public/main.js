@@ -66,8 +66,8 @@ function setrecs(){
         var b = woko[a].split("p3");
         output += "<h4>" + b[0] + "</h4>";
         var cd = b[1];
-        var c = cd.replace(", ", "<br>");
-        output += c;
+        //var c = cd.replace(", ", "<br>");
+        output += cd;
     }
 
     document.getElementById("datadisplay3").innerHTML = "<h1>Recomended Workouts</h1>" + output;

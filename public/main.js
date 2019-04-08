@@ -66,7 +66,7 @@ function setrecs(){
         var b = woko[a].split("p3");
         output += "<h4>" + b[0] + "</h4>";
         var cd = b[1];
-        var c = cd.split("p2");
+        //var c = cd.split("p2");
         output += cd;
     }
 

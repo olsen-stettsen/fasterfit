@@ -147,8 +147,8 @@ function make_recs() {
   }
   var recomendationsforyousir = "";
   for(var s = 0; s < mostrecent.length; s++){
-    var workyout = mostrecent[s].sets.split(",");
-    console.log("ssssss: " + workyout[workyout.length - 1]);
+    var workyout = mostrecent[s].sets;
+    console.log("ssssss: " + workyout);
   }
   return JSON.stringify(mostrecent);
 }

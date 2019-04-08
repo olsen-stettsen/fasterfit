@@ -128,7 +128,7 @@ function posttodb(username, email, password){
  **********************/
 function make_recs() {
   var workouts = JSON.parse(localStorage.getItem("results"));
-  var mostrecent = {};
+  var mostrecent = [];
   for (var count = 0; count < workouts.length; count++) {
     var wd = JSON.parse(workouts[count].sets_reps_json);
     var found = false;

@@ -142,6 +142,7 @@ function make_recs() {
       var wO = new Workout();
       wO.name = wd.name.toUpperCase();
       wO.sets = wd.sets;
+      console.log(mostrecent.length);
       mostrecent[mostrecent.length] = wO;
     }
   }

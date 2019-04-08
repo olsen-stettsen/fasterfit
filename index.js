@@ -150,7 +150,7 @@ function make_recs() {
     var workyout = mostrecent[s].sets;
     var numbbumb = JSON.stringify(workyout[workyout.length - 1]).split(",");
     var yaywoopie = parseInt(numbbumb[0].replace("\"", ""));
-    var set5 = Math.ceil(yaywoopie * 1.1/5)*5;
+    var set5 = Math.ceil(yaywoopie * 1.03/5)*5;
     recomendationsforyousir += "<span class='recliftname'>" + mostrecent[s].name + "</span><br>";
     recomendationsforyousir += set5 + " o " + yaywoopie;
   }

@@ -149,7 +149,8 @@ function make_recs() {
   for(var s = 0; s < mostrecent.length; s++){
     var workyout = mostrecent[s].sets;
     var numbbumb = JSON.stringify(workyout[workyout.length - 1]).split(",");
-    console.log("ssssss: " + numbbumb[0]);
+    var yaywoopie = parseInt(numbbumb[0]);
+    console.log("ssssss: " + yaywoopie);
   }
   return JSON.stringify(mostrecent);
 }

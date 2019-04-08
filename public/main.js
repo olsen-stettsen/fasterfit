@@ -58,7 +58,9 @@ function getMonthstring(index){
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     return months[index];
 }
-function setrecs(){/*
+function setrecs(){
+    document.getElementById("datadisplay3").innerHTML = innerHTML.replace("\"","");
+    /*
     var content = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","");
     var woko = content.split("p1");
     var output = "";
@@ -66,11 +68,11 @@ function setrecs(){/*
         var b = woko[a].split("p3");
         output += "<h4>" + b[0] + "</h4>";
         var cd = b[1];
-        var c = cd.split(", ");
-        for(var ed = 0; ed < c.length; ed++){
-            output += c[ed] + "<br>";
-        }
-        output += typeof c;
+        //var c = cd.split(", ");
+        ..for(var ed = 0; ed < c.length; ed++){
+        //    output += c[ed] + "<br>";
+        //}
+        output += cd;
     }
 
     document.getElementById("datadisplay3").innerHTML = "<h1>Recomended Workouts</h1>" + output;*/

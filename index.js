@@ -155,12 +155,12 @@ function make_recs() {
     var set3 = Math.ceil(set4 * .9/5)*5;
     var set2 = Math.ceil(set3 * .9/5)*5;
     var set1 = Math.ceil(set2 * .9/5)*5;
-    recomendationsforyousir += mostrecent[s].name + "p3";
-    recomendationsforyousir += "10 reps of " + set1 + ", ";
-    recomendationsforyousir += "8 reps of " + set2 + ", ";
-    recomendationsforyousir += "6 reps of " + set3 + ", ";
-    recomendationsforyousir += "4 reps of " + set4 + ", ";
-    recomendationsforyousir += "2 reps of " + set5 + "p1";
+    recomendationsforyousir += "<h1>" + mostrecent[s].name + "</h1>";
+    recomendationsforyousir += "<p>10 reps of " + set1 + "<br>";
+    recomendationsforyousir += "8 reps of " + set2 + "<br>";
+    recomendationsforyousir += "6 reps of " + set3 + "<br>";
+    recomendationsforyousir += "4 reps of " + set4 + "<br>";
+    recomendationsforyousir += "2 reps of " + set5 + "</p>";
   }
   return JSON.stringify(recomendationsforyousir);
 }

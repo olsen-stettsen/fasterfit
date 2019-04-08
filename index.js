@@ -151,12 +151,16 @@ function make_recs() {
     var numbbumb = JSON.stringify(workyout[workyout.length - 1]).split(",");
     var yaywoopie = parseInt(numbbumb[0].replace("\"", ""));
     var set5 = Math.ceil(yaywoopie * 1.02/5)*5;
-    var set4 = Math.ceil(set5 * .8/5)*5;
-    var set3 = Math.ceil(set4 * .8/5)*5;
+    var set4 = Math.ceil(set5 * .9/5)*5;
+    var set3 = Math.ceil(set4 * .9/5)*5;
+    var set2 = Math.ceil(set3 * .9/5)*5;
+    var set1 = Math.ceil(set2 * .9/5)*5;
     recomendationsforyousir += "<span class='recliftname'>" + mostrecent[s].name + "</span><br>";
-    recomendationsforyousir += set5 + "<br>";
-    recomendationsforyousir += set4 + "<br>";
-    recomendationsforyousir += set3 + "<br>";
+    recomendationsforyousir += "10 reps of " + set1 + "<br>";
+    recomendationsforyousir += "8 reps of " + set2 + "<br>";
+    recomendationsforyousir += "6 reps of " + set3 + "<br>";
+    recomendationsforyousir += "4 reps of " + set4 + "<br>";
+    recomendationsforyousir += "2 reps of " + set5 + "<br>";
   }
   return JSON.stringify(recomendationsforyousir);
 }

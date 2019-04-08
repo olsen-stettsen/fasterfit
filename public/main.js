@@ -67,7 +67,7 @@ function setrecs(){
         output += "<h4>" + b[0] + "</h4>";
         var cd = b[1];
         //var c = cd.replace(", ", "<br>");
-        output += cd;
+        output += typeof cd;
     }
 
     document.getElementById("datadisplay3").innerHTML = "<h1>Recomended Workouts</h1>" + output;

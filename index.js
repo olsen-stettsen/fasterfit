@@ -147,7 +147,7 @@ function make_recs() {
   }
   var recomendationsforyousir = "";
   for(var s = 0; s < mostrecent.length; s++){
-    var workyout = JSON.parse(mostrecent.sets);
+    var workyout = JSON.parse(mostrecent[s].sets);
     var topnum = workyout[workyout.length - 1];
     console.log("topnum: " + topnum);
   }

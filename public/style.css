@@ -30,6 +30,10 @@
     float: left;
     width: 50%;
 }
+#datadisplay3{
+    float: right;
+    width: 50%;
+}
 #bodywrapper{
     width: 85%;
     margin-left: 7.5%

@@ -5,6 +5,7 @@ function onload(){
     // Calander
     var date = new Date();
     setCalander(date);
+    setrecs();
     // Page interactions
     listen();
 }
@@ -56,6 +57,9 @@ function getFirstDayOfTheMonth(year, month){
 function getMonthstring(index){
     var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     return months[index];
+}
+function setrecs(){
+    document.getElementById("recsp").innerHTML = document.getElementById("recsp").innerHTML.replace("\"","");
 }
 /****************************************
  * Page interactions

@@ -60,7 +60,7 @@ function getMonthstring(index){
 }
 function setrecs(){
     alert(document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"",""));
-    document.getElementById("datadisplay3").innerHTML = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","").replace("&lt;h4&gt;", "<h4>").replace("&lt;/h4&gt;", "</h4>").replace("&lt;p&gt;", "<p>").replace("&lt;/p&gt;", "</p>").replace("&lt;br&gt;", "<br>");
+    document.getElementById("datadisplay3").innerHTML = document.getElementById("datadisplay3").innerHTML.replace(new RegExp(find, "\""),"").replace("&lt;h4&gt;", "<h4>").replace("&lt;/h4&gt;", "</h4>").replace("&lt;p&gt;", "<p>").replace("&lt;/p&gt;", "</p>").replace("&lt;br&gt;", "<br>");
     /*
     var content = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","");
     var woko = content.split("p1");

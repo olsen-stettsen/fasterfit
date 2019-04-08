@@ -59,7 +59,7 @@ function getMonthstring(index){
     return months[index];
 }
 function setrecs(){
-    document.getElementById("datadisplay3").innerHTML = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","").replace("&lt;", "<").replace("&gt;", ">");
+    document.getElementById("datadisplay3").innerHTML = document.getElementById("datadisplay3").innerHTML.replace("&lt;", "<").replace("&gt;", ">");
     /*
     var content = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","");
     var woko = content.split("p1");

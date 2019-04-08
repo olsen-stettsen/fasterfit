@@ -152,7 +152,7 @@ function make_recs() {
     var yaywoopie = parseInt(numbbumb[0].replace("\"", ""));
     var set5 = Math.ceil(yaywoopie * 1.1/5)*5;
     recomendationsforyousir += "<span class='recliftname'>" + mostrecent[s].name + "</span><br>";
-    recomendationsforyousir += "set5";
+    recomendationsforyousir += set5;
   }
   return JSON.stringify(recomendationsforyousir);
 }

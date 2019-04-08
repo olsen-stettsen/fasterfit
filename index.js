@@ -136,8 +136,8 @@ function make_recs() {
       if (wd.name.toUpperCase() == mostrecent[u].name.toUpperCase()) {
         mostrecent[u].sets = wd.sets;
         found = true;
-      }
-    }*/
+      }*/
+    }
     if (!found) {
       var wO = new Workout();
       wO.name = wd.name.toUpperCase();

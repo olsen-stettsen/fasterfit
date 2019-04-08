@@ -59,7 +59,7 @@ function getMonthstring(index){
     return months[index];
 }
 function setrecs(){
-    document.getElementById("datadisplay3").innerHTML = "<h4>Recomended Workouts</h4>" + document.getElementById("datadisplay3").innerHTML.replace("\"","");
+    document.getElementById("datadisplay3").innerHTML = "<h2>Recomended Workouts</h2>" + document.getElementById("datadisplay3").innerHTML.replace("\"","");
 }
 /****************************************
  * Page interactions

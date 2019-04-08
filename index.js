@@ -149,7 +149,7 @@ function make_recs() {
   for(var s = 0; s < mostrecent.length; s++){
     var workyout = JSON.parse(mostrecent[s]);
     //var topnum = workyout.sets[workyout.sets.length];
-    console.log("ssssss: " + workyout);
+    console.log("ssssss: " + JSON.stringify(workyout));
   }
   return JSON.stringify(mostrecent);
 }

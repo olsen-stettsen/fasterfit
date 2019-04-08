@@ -147,9 +147,8 @@ function make_recs() {
   }
   var recomendationsforyousir = "";
   for(var s = 0; s < mostrecent.length; s++){
-    var workyout =  [];
-    workout = JSON.parse(mostrecent);
-    console.log("ssssss: " + JSON.stringify(workyout));
+    var workyout = JSON.parse(mostrecent[s]);
+    console.log("ssssss: " + workyout);
   }
   return JSON.stringify(mostrecent);
 }

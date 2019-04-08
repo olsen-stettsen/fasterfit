@@ -140,7 +140,7 @@ function make_recs() {
     }
     if (!found) {
       var wO = new Workout();
-      wO.name = wd.name.toUpperCase();;
+      wO.name = wd.name.toUpperCase();
       wO.sets = wd.sets;
       mostrecent[mostrecent.length] = wO;
     }

@@ -142,15 +142,8 @@ function make_recs() {
       var wO = new Workout();
       wO.name = wd.name.toUpperCase();
       wO.sets = wd.sets;
-      var molen;
-      if (typeof mostrecent.length == "undefined"){
-        molen = 0;
-      }
-      else {
-        molen = mostrecent.length;
-      }
       console.log("mostrecent.length: " + mostrecent.length);
-      mostrecent[molen] = wO;
+      mostrecent[mostrecent.length] = wO;
     }
   }
   return JSON.stringify(mostrecent);

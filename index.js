@@ -151,8 +151,12 @@ function make_recs() {
     var numbbumb = JSON.stringify(workyout[workyout.length - 1]).split(",");
     var yaywoopie = parseInt(numbbumb[0].replace("\"", ""));
     var set5 = Math.ceil(yaywoopie * 1.02/5)*5;
+    var set4 = Math.ceil(set5 * .8/5)*5;
+    var set3 = Math.ceil(set4 * .8/5)*5;
     recomendationsforyousir += "<span class='recliftname'>" + mostrecent[s].name + "</span><br>";
-    recomendationsforyousir += set5 + " o " + yaywoopie;
+    recomendationsforyousir += set5 + "<br>";
+    recomendationsforyousir += set4 + "<br>";
+    recomendationsforyousir += set3 + "<br>";
   }
   return JSON.stringify(recomendationsforyousir);
 }

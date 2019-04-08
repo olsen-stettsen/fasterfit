@@ -145,12 +145,12 @@ function make_recs() {
       mostrecent[mostrecent.length] = wO;
     }
   }
-  var recomendationsforyousir = "";/*
+  var recomendationsforyousir = "";
   for(var s = 0; s < mostrecent.length; s++){
-    var workyout = JSON.parse(mostrecent[s].sets);
-    var topnum = workyout[workyout.length - 1];
+    var workyout = JSON.parse(mostrecent[s]);
+    var topnum = workyout.sets[workyout.sets.length];
     console.log("topnum: " + topnum);
-  }*/
+  }
   return JSON.stringify(mostrecent);
 }
 function Workout(){

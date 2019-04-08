@@ -137,12 +137,12 @@ function make_recs() {
         mostrecent[u].sets = wd.sets;
         found = true;
       }
-    }
-    if (!found) {
-      var wO = new Workout();
-      wO.name = wd.name.toUpperCase();
-      wO.sets = wd.sets;
-      mostrecent[mostrecent.length] = wO;
+      else {
+        var wO = new Workout();
+        wO.name = wd.name.toUpperCase();
+        wO.sets = wd.sets;
+        mostrecent[mostrecent.length] = wO;
+      }
     }
   }
   return JSON.stringify(mostrecent);

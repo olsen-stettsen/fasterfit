@@ -60,8 +60,18 @@ function getMonthstring(index){
 }
 function setrecs(){
     var content = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","");
+    var woko = content.split("p1");
+    var output = "";
+    for (var i = 0; i < woko.length; i++){
+        var weki = woko[i].split("p3")
+        output += "<h5>" + weki[0] + "</h5>";
+        var waka = weki.split("p2");
+        for(var e = 0; e < waka.length; e++){
+            output += waka[e] + "<br>";
+        }
+    }
 
-    document.getElementById("datadisplay3").innerHTML = "<h1>Recomended Workouts</h1>" + content;
+    document.getElementById("datadisplay3").innerHTML = "<h1>Recomended Workouts</h1>" + output;
 }
 /****************************************
  * Page interactions

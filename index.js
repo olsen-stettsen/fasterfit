@@ -132,17 +132,17 @@ function make_recs() {
   for (var count = 0; count < workouts.length; count++) {
     var wd = JSON.parse(workouts[count].sets_reps_json);
     var found = false;
-    for (var u = 0; u < mostrecent.length; u++) {
+    for (var u = 0; u < mostrecent.length; u++) {/*
       if (wd.name.toUpperCase() == mostrecent[u].name.toUpperCase()) {
         mostrecent[u].sets = wd.sets;
         found = true;
       }
-    }
+    }*/
     if (!found) {
       var wO = new Workout();
       wO.name = wd.name.toUpperCase();
       wO.sets = wd.sets;
-      mostrecent[mostrecent.length + 1] = wO;
+      mostrecent[mostrecent.length] = wO;
     }
   }
   return JSON.stringify(mostrecent);

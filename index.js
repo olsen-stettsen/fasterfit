@@ -142,9 +142,14 @@ function make_recs() {
       var wO = new Workout();
       wO.name = wd.name.toUpperCase();
       wO.sets = wd.sets;
-      console.log("mostrecent.length: " + mostrecent.length);
       mostrecent[mostrecent.length] = wO;
     }
+  }
+  var recomendationsforyousir = "";
+  for(var s = 0; s < mostrecent.length; s++){
+    var workyout = JSON.parse(mostrecent.sets);
+    var topnum = workyout[workyout.length - 1];
+    console.log("topnum: " + topnum);
   }
   return JSON.stringify(mostrecent);
 }

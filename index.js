@@ -148,7 +148,8 @@ function make_recs() {
   var recomendationsforyousir = "";
   for(var s = 0; s < mostrecent.length; s++){
     var workyout = mostrecent[s].sets;
-    console.log("ssssss: " + JSON.stringify(workyout[workyout.length - 1]));
+    var numbbumb = JSON.stringify(workyout[workyout.length - 1]).split(",");
+    console.log("ssssss: " + numbbumb);
   }
   return JSON.stringify(mostrecent);
 }

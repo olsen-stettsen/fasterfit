@@ -155,7 +155,7 @@ function make_recs() {
     var set3 = Math.ceil(set4 * .9/5)*5;
     var set2 = Math.ceil(set3 * .9/5)*5;
     var set1 = Math.ceil(set2 * .9/5)*5;
-    recomendationsforyousir += "<h1>" + mostrecent[s].name + "</h1>";
+    recomendationsforyousir += "<h4>" + mostrecent[s].name + "</h4>";
     recomendationsforyousir += "<p>10 reps of " + set1 + "<br>";
     recomendationsforyousir += "8 reps of " + set2 + "<br>";
     recomendationsforyousir += "6 reps of " + set3 + "<br>";

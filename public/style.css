@@ -38,3 +38,11 @@
     width: 85%;
     margin-left: 7.5%
 }
+#signupwelcome{
+    border: solid black 2pt;
+    border-radius: 12pt;
+    position: absolute;
+    top: 45%;
+    width: 50%;
+    left: 25%;
+}

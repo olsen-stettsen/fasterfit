@@ -101,5 +101,6 @@ body{
     padding: 20pt;
 }
 #head{
-
+    width: 100%;
+    background-color: #ffa600c5;
 }

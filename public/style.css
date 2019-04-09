@@ -3,8 +3,13 @@ body{
     font-family: Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;
 }
 #monthback{
+    float: left;
 }
 #headermonth{
+    float: left;
+}
+#monthforward{
+    float: left;
 }
 #headeryear{
 }

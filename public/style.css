@@ -13,6 +13,9 @@ body{
 }
 #wOenter{
     display: none;
+    z-index: 99;
+    position: absolute;
+    border: solid black 2pt;
 }
 #workoutdata{
     display: none;

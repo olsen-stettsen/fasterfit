@@ -1,7 +1,7 @@
 body{
     margin: 0;
     font-family: Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;
-}
+}/*
 #monthback{
     float: left;
 }
@@ -16,7 +16,7 @@ body{
 }
 #heder{
     margin-left: 25%
-}
+}*/
 #realcal{
     border: solid black 2pt;
     border-radius: 12pt;

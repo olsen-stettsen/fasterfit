@@ -10,6 +10,11 @@ body{
     border: solid black 2pt;
     border-radius: 12pt;
     width: 50%;
+    background-color: white;
+}
+#mainnav1{
+    border-radius: 6pt;
+    background-color: green;
 }
 #wOenter{
     display: none;

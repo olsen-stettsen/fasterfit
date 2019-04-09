@@ -11,7 +11,8 @@ body{
 #monthforward{
     float: left;
 }
-#headeryear{
+#header{
+    text-align: center;
 }
 #wOenter{
     display: none;

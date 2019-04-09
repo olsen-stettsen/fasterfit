@@ -20,6 +20,7 @@ body{
 #calander{
     border: solid black 2pt;
     border-radius: 12pt;
+    width: 50%;
 }
 #wOenter{
     display: none;

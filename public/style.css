@@ -35,15 +35,15 @@ body{
 }
 #datadisplay2{
     padding-left: 5%;
-    /*float: left;*/
-    width: 50%;
+    float: left;
+    width: 45%;
     border: solid black 2pt;
     border-radius: 12pt;
 
 }
 #datadisplay3{
     float: right;
-    width: 50%;
+    width: 45%;
     border: solid black 2pt;
     border-radius: 12pt;
 

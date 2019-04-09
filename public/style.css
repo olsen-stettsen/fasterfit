@@ -18,6 +18,7 @@ body{
     margin-left: 25%
 }*/
 #realcal{
+    text-align: center;
     border: solid black 2pt;
     border-radius: 12pt;
     width: 50%;

@@ -49,9 +49,11 @@
     padding-bottom: 20pt;
 }
 #bak{
+    /*
     background-image: url("https://o2fitnessclubs.com/wp-content/uploads/2018/08/O2-Fitness-Brier-Creek-Header.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
+    background-color: brown;
     height: 100%;
     width: 100%;
 }

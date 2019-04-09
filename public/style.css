@@ -1,22 +1,10 @@
 body{
     margin: 0;
     font-family: Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;
-}/*
-#monthback{
-    float: left;
 }
-#headermonth{
-    float: left;
-}
-#monthforward{
-    float: left;
-}
-#header{
+#calfields{
     text-align: center;
 }
-#heder{
-    margin-left: 25%
-}*/
 #realcal{
     text-align: center;
     border: solid black 2pt;

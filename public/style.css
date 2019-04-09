@@ -3,7 +3,7 @@ body{
     font-family: Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;
 }
 #calfields{
-    margin-left: 10%;
+    margin-left: 5%;
 }
 #realcal{
     text-align: center;
@@ -34,6 +34,7 @@ body{
     width: 50%;
 }
 #datadisplay2{
+    padding-left: 5%;
     float: left;
     width: 50%;
 }

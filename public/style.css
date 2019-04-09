@@ -9,7 +9,7 @@ body{
     text-align: center;
     border: solid black 2pt;
     border-radius: 12pt;
-    width: 45%;
+    width: 50%;
 }
 #wOenter{
     display: none;
@@ -34,7 +34,8 @@ body{
     width: 50%;
 }
 #datadisplay2{
-    float: left;
+    padding-left: 5%;
+    float: right;
     width: 50%;
     border: solid black 2pt;
     border-radius: 12pt;

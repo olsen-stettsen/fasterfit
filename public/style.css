@@ -34,7 +34,7 @@ body{
     width: 50%;
 }
 #datadisplay2{
-    padding-left: 5%;
+    margin-left: 5%;
     float: left;
     width: 46%;
     border: solid black 2pt;

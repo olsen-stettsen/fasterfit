@@ -17,6 +17,10 @@ body{
 #heder{
     margin-left: 25%
 }
+#calander{
+    border: solid black 2pt;
+    border-radius: 12pt;
+}
 #wOenter{
     display: none;
 }

@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 #monthback{
 }
 #headermonth{
@@ -50,7 +53,6 @@
     background-color: #ffffffc5;
 }
 #bak{
-    margin: 0%;
     background-image: url("https://o2fitnessclubs.com/wp-content/uploads/2018/08/O2-Fitness-Brier-Creek-Header.jpg");
     background-size: cover;
     background-repeat: no-repeat;

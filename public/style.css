@@ -36,14 +36,14 @@ body{
 #datadisplay2{
     padding-left: 5%;
     float: left;
-    width: 47%;
+    width: 46%;
     border: solid black 2pt;
     border-radius: 12pt;
 
 }
 #datadisplay3{
     float: right;
-    width: 47%;
+    width: 46%;
     border: solid black 2pt;
     border-radius: 12pt;
 

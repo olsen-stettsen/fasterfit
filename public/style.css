@@ -47,6 +47,7 @@ body{
     border: solid black 2pt;
     border-radius: 12pt;
     text-align: center;
+    background-color: white;
 
 }
 #datadisplay3{
@@ -55,7 +56,7 @@ body{
     width: 46%;
     border: solid black 2pt;
     border-radius: 12pt;
-
+    background-color: white;
 }
 #bodywrapper{
     width: 85%;
@@ -73,6 +74,13 @@ body{
     background-color: #ffffffc5;
 }
 #bak{
+    background-image: url("https://o2fitnessclubs.com/wp-content/uploads/2018/08/O2-Fitness-Brier-Creek-Header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 700px;
+    width: 100%;
+}
+#backgro{
     background-image: url("https://o2fitnessclubs.com/wp-content/uploads/2018/08/O2-Fitness-Brier-Creek-Header.jpg");
     background-size: cover;
     background-repeat: no-repeat;

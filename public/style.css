@@ -17,7 +17,8 @@ body{
     position: absolute;
     border: solid black 2pt;
     background-color: white;
-    left: 45%;
+    padding: 30pt;
+    left: 40%;
     top: 30%;
 }
 #workoutdata{

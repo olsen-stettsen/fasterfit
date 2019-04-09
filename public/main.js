@@ -59,24 +59,7 @@ function getMonthstring(index){
     return months[index];
 }
 function setrecs(){
-    alert(document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"",""));
     document.getElementById("datadisplay3").innerHTML = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","").replace(/hhhh/g, "<h4>").replace(/hhhj/g, "</h4>").replace(/bbr/g, "<br>").replace("&lt;/p&gt;", "</p>").replace("&lt;br&gt;", "<br>");
-    /*
-    var content = document.getElementById("datadisplay3").innerHTML.replace("\"","").replace("\"","");
-    var woko = content.split("p1");
-    var output = "";
-    for(var a = 0; a < woko.length; a++){
-        var b = woko[a].split("p3");
-        output += "<h4>" + b[0] + "</h4>";
-        var cd = b[1];
-        //var c = cd.split(", ");
-        ..for(var ed = 0; ed < c.length; ed++){
-        //    output += c[ed] + "<br>";
-        //}
-        output += cd;
-    }
-
-    document.getElementById("datadisplay3").innerHTML = "<h1>Recomended Workouts</h1>" + output;*/
 }
 /****************************************
  * Page interactions

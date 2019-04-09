@@ -16,6 +16,9 @@ body{
     border-radius: 6pt;
     background-color: green;
 }
+.wObtn{
+    border-radius: 6pt;
+}
 #wOenter{
     display: none;
     z-index: 99;

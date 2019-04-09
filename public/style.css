@@ -42,7 +42,8 @@
     border: solid black 2pt;
     border-radius: 12pt;
     position: absolute;
-    top: 45%;
+    top: 30%;
     width: 50%;
     left: 25%;
+    text-align: center;
 }

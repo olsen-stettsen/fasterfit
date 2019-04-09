@@ -14,7 +14,7 @@ body{
 }
 #mainnav1{
     border-radius: 6pt;
-    background-color: green;
+    background-color: orange;
 }
 .wObtn{
     border-radius: 6pt;
@@ -33,7 +33,7 @@ body{
     display: none;
 }
 .hasdata{
-    background: green;
+    background: orange;
 }
 .calbtn{
     height: 100%;
@@ -94,4 +94,5 @@ body{
     background-repeat: no-repeat;
     padding-bottom: 700px;
     width: 100%;
+    margin: 0;
 }
